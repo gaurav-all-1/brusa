@@ -1,0 +1,26 @@
+.social_icons ul{
+    display: inline-flex;
+}
+.social_icons {
+    line-height: 10;
+}
+.social_icons li {
+    padding: 0px 25px 0px 1px
+}
+.social_icons li i{
+    // border: 1px solid;
+    padding: 40%;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+}
+.footer-2 {
+    background-color: #323232;
+}
+::ng-deep .widget li,h4 {
+    color: #fff !important;
+}
+.footer a:hover {
+    color: #0e2c5e;
+    font-weight: 800;
+}
