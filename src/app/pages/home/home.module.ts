@@ -20,6 +20,7 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { SocialauthComponent } from './socialauth/socialauth.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { CancelpolicyComponent } from './cancelpolicy/cancelpolicy.component';
 
 
 // import { BlogCollectionComponent } from './blog-collection/blog-collection.component';
@@ -39,6 +40,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
   SocialauthComponent,
   EmailverifyComponent,
   ForgotpasswordComponent,
+  CancelpolicyComponent,
 	
 
 		// BlogCollectionComponent

@@ -15,6 +15,7 @@ import { SocialauthComponent } from './pages/home/socialauth/socialauth.componen
 import { EmailverifyComponent } from './pages/home/emailverify/emailverify.component';
 import { ForgotpasswordComponent } from './pages/home/forgotpassword/forgotpassword.component';
 import { SingleComponent } from './shared/single/single.component';
+import { CancelpolicyComponent } from './pages/home/cancelpolicy/cancelpolicy.component';
 
 
 
@@ -58,6 +59,11 @@ const routes: Routes = [
 			{
 				path: 'success',
 				component: SuccessComponent
+			},
+
+			{
+				path: 'cancelpolicy',
+				component: CancelpolicyComponent
 			},
 			
 			// {

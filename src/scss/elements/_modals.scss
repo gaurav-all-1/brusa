@@ -47,15 +47,15 @@
 	}
 }
 
-.modal-backdrop {
-	background-color: #333;
+// .modal-backdrop {
+// 	background-color: #333;
 
-	&.show {
-		opacity: .4;
-		animation-name: modalFadeOut;
-		animation-duration: .3s;
-	}
-}
+// 	&.show {
+// 		opacity: .4;
+// 		animation-name: modalFadeOut;
+// 		animation-duration: .3s;
+// 	}
+// }
 
 .modal-body {
 	padding: 0;
@@ -102,16 +102,16 @@
 	animation-duration: .3s;
 }
 
-.modal-open {
-	.modal-dialog {
-		animation-name: modalFadeUpIn;
-	}
+// .modal-open {
+// 	.modal-dialog {
+// 		animation-name: modalFadeUpIn;
+// 	}
 
-	.modal-backdrop {
-		animation-name: modalFadeIn;
-		transition: none;
-	}
-}
+// 	.modal-backdrop {
+// 		animation-name: modalFadeIn;
+// 		transition: none;
+// 	}
+// }
 
 .modal-close {
 	position: absolute;

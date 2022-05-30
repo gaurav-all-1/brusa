@@ -62,7 +62,7 @@
 
             <div class="header-right">
                 <!-- <a class="signin-modal shadow" (click)="showmodal($event)" >Sign In</a> -->
-                <a class="signin-modal shadow" (click)="showLoginModal($event)" >Sign In</a>
+                <a *ngIf="isTrue!==true" class="signin-modal shadow" (click)="showLoginModal($event)" >Sign In</a>
 
 
                 <molla-wishlist-menu></molla-wishlist-menu>
@@ -71,8 +71,13 @@
                 
                 <div *ngIf="isTrue==true" class="account">
                     <a routerLink="/shop/dashboard" title="My account">
-                        <div class="icon">
-                            <img src="assets/images/user-name.png" alt="">
+                        <div class="icon profile-icon">
+                            <div class="profile-img">
+                                <img src="assets/images/user-name.png" alt="">
+                            </div>
+                            <div class="user_name">
+                                <p>Hi User</p>
+                            </div>
                         </div>
                         <!-- <p>Account</p> -->
                     </a>
