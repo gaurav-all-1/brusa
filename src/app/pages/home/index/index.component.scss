@@ -1,0 +1,531 @@
+::ng-deep .brand {
+    border: none !important;
+}
+::ng-deep .brands-border {
+    margin-top: 35px !important;
+}
+::ng-deep .side-up {
+    padding: 5% !important;
+}
+.div_img {
+    width: 39%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 6%;
+}
+.div_img:hover{
+    border: 1px solid #74ab26;
+}
+.div_img img {
+    width: 100%;
+}
+.data_name {
+    text-align: center;
+    // margin-top: 2%;
+}
+.data_name:hover {
+   color: #74ab26;
+}
+::ng-deep .owl-nav {
+    display: block !important;
+
+}
+::ng-deep .owl-prev::before{
+    content: "\f060";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 7px;
+    right: 6px;
+}
+::ng-deep .owl-next::before{
+    content: "\f061";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 7px;
+    right: 6px;
+}
+.top-cat {
+    text-align: center;
+}
+.top-cat h1 {
+    color: #323232;
+    font-size: 42px;
+    font-weight: 700;
+}
+.top-cat p {
+    color: #323232 !important;
+    font-size: 15px;
+    font-weight: 400;
+}
+::ng-deep .icon-angle-left {
+    display: none !important;
+}
+
+::ng-deep .icon-angle-right {
+    display: none !important;
+}
+.title {
+    color: #000;
+}
+.title-desc {
+    color: #000;
+    font-weight: 800 !important;
+
+}
+.title-desc span {
+    color: #74ab26 !important;
+    font-weight: 800 !important;
+}
+::ng-deep .icon-boxes-container {
+    padding-bottom: 7.8rem !important;
+}
+::ng-deep .email-button .btn:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+::ng-deep .email-button .btn {
+    background-color: #74ab26 !important;
+    color: #fff !important;
+}
+::ng-deep .deal-container .deal-banner {
+    padding: 0 !important;
+}
+.intro-subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: #323232;
+}
+.intro-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: #323232;
+}
+.banner-summer {
+    text-align: left !important;
+}
+.offer-1 {
+    background-image: url("../../../../assets/images/brusa-offer-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    padding: 5%;
+}
+.offer-2 {
+    background-image: url("../../../../assets/images/brusa-offer-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    padding: 5%;
+}
+
+.offer-2 h1 {
+    color: #BE0134;
+    font-size: 55px;
+    font-weight: 700;
+}
+.offer-2 p {
+    color: #BE0134;
+    font-size: 21px;
+    font-weight: 500;
+}
+.shop-redirect {
+    height: 58%;
+    position: relative;
+}
+.shop-redirect .btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #323232;
+    color: #fff;
+}
+.sale {
+    height: 89%;
+    position: relative;
+}
+.offer-value {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.offervalue-redirect {
+    position: absolute;
+    right: 0;
+    bottom: 24px;
+}
+.offer-value p {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+}
+.offer-value h1 {
+    color: #fff;
+    font-size: 55px;
+    font-weight: 700;
+}
+.offervalue-redirect .btn {
+    background-color: #323232;
+    color: #fff;
+}
+::ng-deep .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.all1 {
+    position: relative;
+}
+.all{
+    background-color: #0E2C5E;
+    height: 180px;
+    position: absolute;
+    top: 80px;
+}
+.darkmode {
+    z-index: 999;
+}
+.sale_img{
+    width: 100%;
+    height: 100%;
+}
+.sale_img img {
+    width: 100%;
+    height: 100%;
+}
+.sale_img {
+    position: relative;
+}
+.arrival-button {
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    text-align: center;
+    // display: none;
+}
+// .sale_img:hover .arrival-button {
+//     display: block;
+//     margin-top: 30px;
+//     transition: top .5s ease;
+// }
+.arrival-button .btn {
+    background: #0E2C5E;
+    color: #fff;
+}
+.sale_page h2{
+    font-size: 60px;
+    font-weight: 400;
+    color: #000;
+    font-family: 'Ubuntu', sans-serif;
+}
+.sale_page h1 {
+    font-size: 355px;
+    color: #0E2C5E;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+}
+#onsale{
+    position: relative;
+}
+#onsale .box{
+    height: 185px;
+    width: 77%;
+    background-color: #be0134;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#onsale h6{
+    text-align: end;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 56px !important;
+    margin-top: 20px;
+    color: white;
+}
+#onsale h1{
+    font-size: 300px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    color: #0E2C5E;
+    text-align: end;
+}
+.sale1{
+    margin-top: 15%;
+}
+.subscribe_input {
+    width: 50%;
+    margin: 0 auto;
+}
+#subscribe {
+    background-image: url("../../../../assets/images/subscribe-back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    padding: 5% 0 5% 0;
+    margin: 5% 0 5% 0;
+}
+.subscribe_input {
+    margin-top: 10%;
+}
+.text-subscribe {
+    text-align: end;
+}
+.discount {
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: end;
+}
+.icon{
+    position: relative;
+}
+.icon i{
+    // border: 1px solid;
+    padding: 10%;
+    border-radius: 50%;
+    background: #BE0134;
+    color: #fff;
+}
+.icon input {
+    width: 50%;
+    border: none !important;
+    border-radius: 18px !important;
+    padding: 2% !important;
+}
+.btn i:last-child{
+    margin-left: 9rem !important;
+}
+.icon .btn {
+    position: absolute;
+    bottom: -15px;
+}
+.check .btn {
+    color: #fff;
+    background-color: #0E2C5E;
+}
+.trending {
+   text-align: center;
+}
+.trending h1 {
+    font-size: 42px;
+    font-weight: 700px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #323232;
+}
+.trending p {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+    color: #323232;
+}
+.side-img {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.side-img span {
+    position: absolute;
+    bottom: 30px;
+    padding: 11px 32px 11px 13px;
+    left: 3px;
+    background: #BE0134;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.slider_trending {
+    background-color: #F6F4F4;
+    padding: 2% 0 2% 0;
+}
+#Going_on {
+    background-image: url("../../../../assets/images/whats_going.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+#Going_on .box {
+    clip-path: polygon(0 0, 100% 0, 83% 100%, 0% 100%);
+    width: 80%;
+    height: 250px;
+    background-color: rgba($color: #be0134, $alpha: 0.5);
+    position: absolute;
+    top: 146px;
+    left: 0;
+}
+.clip-box h1{
+    font-size: 35px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+.clip-box p{
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+.clip_box_second {
+    padding: 67px 127px 1px 54px
+}
+.clip_box_first {
+    padding: 63px 1px 1px 57px;
+}
+// ::ng-deep .owl-theme .owl-nav{
+//     color:#323232 !important;
+// }
+// .owl-theme .owl-nav .owl-prev {
+//     left: 45% !important;
+// }
+::ng-deep .owl-theme .owl-nav .owl-prev {
+    left: 45% !important;
+    top: 100% !important;
+    margin-top: 3% !important;
+}
+::ng-deep .owl-theme .owl-nav .owl-next {
+    right: 45% !important;
+    top: 100% !important;
+    margin-top: 3% !important;
+}
+.cat-slide {
+    width: 85%;
+    margin: 0 auto;
+    padding: 3% 0 3% 0;
+}
+.cat-slide img {
+    width: 100%;
+}
+::ng-deep .cat-slide a img:hover{
+    box-shadow: 6px 5px 7px 0px !important;
+    color: grey !important;
+}
+.top_cat_slider {
+    padding: 3% 0 3% 0;
+}
+.checked {
+    color: orange;
+}
+.side_checked {
+    padding-left: 10px;
+}
+.rating-cat {
+    padding-top: 7%;
+}
+
+.rating-cat p {
+    font-size: 14px;
+    color: #323232;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+.rating-cat h5 {
+    font-size: 16px;
+    color: #323232;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+.rating-cat h6 {
+    font-size: 16px;
+    color:#0E2C5E;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+.rating-cat del {
+    font-size: 16px;
+    color:#323232;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+.bottom_box {
+    height: 70px;
+}
+
+
+//  
+// ::ng-depp .owl-theme .owl-nav .owl-prev {
+//     margin-top: 3% !important;
+// }
+// ::ng-deep .owl-theme .owl-nav .owl-next {
+//     margin-top: 3% !important;
+// }
+
+.inbox {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+// media querry
+
+@media (max-width:767px){
+    .offervalue-redirect{
+        text-align: end;
+    }
+    .offer-1{
+        margin-top: 1%;
+    }
+    .check_child_1 {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .check_child_2 {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .check {
+        margin-top: 18%;
+    }
+    .arrival-button {
+        bottom: 4px;
+    }
+    .arrival-button .btn {
+        min-width: 1px;
+        font-size: 9px;
+    }
+    #onsale .box {
+        width: 100%;
+    }
+    #onsale h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+    #onsale h6 {
+        font-size: 25px !important;
+        text-align: center;
+    }
+    .sale1 {
+        margin-top: 9%; 
+    } 
+    .best_seller {
+        margin-top: 11rem !important;
+    }
+    .subscribe_input {
+        margin-top: 28%;
+    } 
+    .discount {
+        font-size: 25px;
+    } 
+    .inbox {
+        font-size: 12px;
+    }
+    .icon input{
+        text-align: center;
+    }
+    .icon .btn {
+        position: relative !important;
+    }
+    ::ng-deep .owl-theme .owl-nav .owl-next {
+        right: 42%!important;
+    }
+}
+.intro-slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+

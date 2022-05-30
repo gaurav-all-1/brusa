@@ -1,0 +1,23 @@
+.verify{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #0e2c5e;
+    padding: 3%;
+}
+#verify_email {
+    padding: 0 0 40px 0;
+}
+
+.verify .btn {
+    border: 1px solid #0e2c5e;
+    color: #0e2c5e;
+}
+
+.verify :hover.btn{
+    background-color: #0e2c5e;
+    color: #fff;
+}
+
+.upper_box {
+    margin-top: -20px;
+}
