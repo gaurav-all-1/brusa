@@ -172,7 +172,7 @@ export class ProductcheckoutComponent implements OnInit {
 						bubbles:true,
 						cancelable:true
 					})
-				 window.dispatchEvent(event);
+				 	window.dispatchEvent(event);
 				},
 				"prefill": {
 					"name": "Gaurav Kumar",

@@ -1,9 +1,7 @@
 import { Component, DebugNode, OnInit } from '@angular/core';
-
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
-
 import { introSlider, brandSlider } from '../data';
 import { MasterService } from 'src/app/shared/services/master.service';
 import { CategoryService } from 'src/app/shared/services/category.service';
@@ -66,7 +64,7 @@ export class IndexComponent implements OnInit {
 		var email = this.emailForm.get("email").value;
 		alert(email)
 		console.log(email);
-
+																	
 		const data={
 			"status":1,
 			"user_email":email,
