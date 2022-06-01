@@ -21,6 +21,8 @@ import { SocialauthComponent } from './socialauth/socialauth.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { CancelpolicyComponent } from './cancelpolicy/cancelpolicy.component';
+import { ReturnExchangeComponent } from './returnexchange/returnexchange.component';
+import { OrderPolicyComponent } from './orderpolicy/orderpolicy.component';
 
 
 // import { BlogCollectionComponent } from './blog-collection/blog-collection.component';
@@ -41,6 +43,8 @@ import { CancelpolicyComponent } from './cancelpolicy/cancelpolicy.component';
   EmailverifyComponent,
   ForgotpasswordComponent,
   CancelpolicyComponent,
+  ReturnExchangeComponent,
+  OrderPolicyComponent,
 	
 
 		// BlogCollectionComponent

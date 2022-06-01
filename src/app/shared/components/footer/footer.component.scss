@@ -20,7 +20,10 @@
 ::ng-deep .widget li,h4 {
     color: #fff !important;
 }
+.footer a{
+    transition: all 0.5s ease-in-out;
+}
 .footer a:hover {
-    color: #0e2c5e;
-    font-weight: 800;
+    color: #fff;
+    padding-left: 8px;
 }
