@@ -130,7 +130,7 @@ export class DetailOneComponent implements OnInit {
 			this.variants.push(this.product['variants'][v]);
 		});
 		console.log(this.variants);
-		this.amount = this.product.variants[0]['colours'][0]['price'];
+		this.amount = this.product.variants[0]['price'];
 
 	}
 
