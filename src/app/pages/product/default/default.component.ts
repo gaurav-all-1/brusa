@@ -39,9 +39,6 @@ export class DefaultPageComponent implements OnInit {
 				}
 
 				this.product = result.data[0];
-				// this.prev = result.prevProduct;
-				// this.next = result.nextProduct;
-				// this.related = result.relatedProducts;
 				this.loaded = true;
 				debugger;
 				console.log("*****");
@@ -55,6 +52,6 @@ export class DefaultPageComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		// console.log("default com",this.catId)
+		console.log("default com",this.product)
 	}
 }

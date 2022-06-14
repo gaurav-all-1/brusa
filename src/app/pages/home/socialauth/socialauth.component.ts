@@ -33,7 +33,7 @@ export class SocialauthComponent implements OnInit {
         // setTimeout(()=>{
         //  this.route.navigateByUrl("/");
         // },700)
-        window.location.href = "https://nutrivillage.in/";
+        window.location.href = "https://Nutrivillage.in/";
 
       // location.reload()
 

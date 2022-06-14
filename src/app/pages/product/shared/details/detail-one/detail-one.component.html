@@ -157,29 +157,29 @@
 
 
                 <div class="col-6 justify-content-end">
-                    <div class="product-price" *ngIf="selectedVariant.color && selectedVariant.size != '' else variationPrice">
+                    <!-- <div class="product-price" *ngIf="selectedVariant.color && selectedVariant.size != '' else variationPrice">
                         ${{ selectedVariant.price ? selectedVariant.price.toFixed( 2 ) : 0 }}
-                    </div>
-                    <ng-template #variationPrice>
-                        <div class="product-price" *ngIf="!product.stock || product.stock == 0 else elseBlock">
+                    </div> -->
+                    <!-- <ng-template #variationPrice> -->
+                        <!-- <div class="product-price" *ngIf="!product.stock || product.stock == 0 else elseBlock">
                             <span class="out-price">${{ product.price.toFixed(2) }}</span>
-                        </div>
+                        </div> -->
 
-                        <ng-template #elseBlock>
-                            <div class="product-price" *ngIf="minPrice == maxPrice else elseBlock">
-                                ${{ minPrice.toFixed(2) }}</div>
-                            <ng-template #elseBlock>
+                        <!-- <ng-template #elseBlock> -->
+                            <!-- <div class="product-price" *ngIf="minPrice == maxPrice else elseBlock">
+                                ${{ minPrice.toFixed(2) }}</div> -->
+                            <!-- <ng-template #elseBlock>
                                 <div class="product-price" *ngIf="product.variants.length == 0 else elseBlock">
                                     <span class="new-price">${{ minPrice.toFixed(2) }}</span>
                                     <span class="old-price">${{ maxPrice.toFixed(2) }}</span>
-                                </div>
-                                <ng-template #elseBlock>
+                                </div> -->
+                                <!-- <ng-template #elseBlock> -->
                                     <div class="product-price"><i class="fa-solid fa-indian-rupee-sign"></i>{{ product.variants[0].price }}
                                     </div>
-                                </ng-template>
-                            </ng-template>
-                        </ng-template>
-                    </ng-template>
+                                <!-- </ng-template> -->
+                            <!-- </ng-template> -->
+                        <!-- </ng-template> -->
+                    <!-- </ng-template> -->
 
                     <molla-quantity-input [max]="product.stock" (changeQty)="onChangeQty( $event )" [value]="qty">
                     </molla-quantity-input>

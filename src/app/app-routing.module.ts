@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -16,7 +17,8 @@ import { EmailverifyComponent } from './pages/home/emailverify/emailverify.compo
 import { ForgotpasswordComponent } from './pages/home/forgotpassword/forgotpassword.component';
 import { SingleComponent } from './shared/single/single.component';
 import { CancelpolicyComponent } from './pages/home/cancelpolicy/cancelpolicy.component';
-
+import { OrderPolicyComponent } from './pages/home/orderpolicy/orderpolicy.component';
+import { ReturnExchangeComponent } from './pages/home/returnexchange/returnexchange.component';
 
 
 
@@ -64,6 +66,14 @@ const routes: Routes = [
 			{
 				path: 'cancelpolicy',
 				component: CancelpolicyComponent
+			},
+			{
+				path: 'orderpolicy',
+				component: OrderPolicyComponent
+			},
+			{
+				path: 'returnexchange',
+				component: ReturnExchangeComponent
 			},
 			
 			// {

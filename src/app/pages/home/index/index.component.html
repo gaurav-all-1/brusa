@@ -2,7 +2,7 @@
     <div class="intro-slider-container">
         <owl-carousel carouselClasses="owl-simple owl-light owl-nav-inside slider-container-1" [options]="introSlider">
             <div class="intro-slide intro-slide2 slide-image"
-            style="background-image: url(assets/images/black_banner_new.png); background-color: #edf1f0;">
+            style="background-image: url(assets/images/brusa_banner_3.jpg); background-color: #edf1f0;">
             <div class="container intro-content" contentAnim aniName="fadeInUpShorter">
                 <div class="banner-summer">
                     <!-- <h3 class="intro-subtitle">SUMMER SPECIAL</h3>
@@ -16,37 +16,37 @@
                 </div>
             </div>
         </div>
-            <!-- <div class="intro-slide intro-slide2 slide-image"
-                style="background-image: url(assets/images/brusa-slider.png); background-color: #edf1f0;">
+            <div class="intro-slide intro-slide2 slide-image"
+                style="background-image: url(assets/images/new_2.jpg); background-color: #edf1f0;">
                 <div class="container intro-content" contentAnim aniName="fadeInUpShorter">
                     <div class="banner-summer">
-                        <h3 class="intro-subtitle">SUMMER SPECIAL</h3>
+                        <!-- <h3 class="intro-subtitle">SUMMER SPECIAL</h3>
                         <h1 class="intro-title">Check out most promising product bought by our buyers
                         </h1>
 
                         <a routerLink="/shop/sidebar/list" class="btn btn-outline-dark">
                             <span>Shop Now</span>
                             <i class="icon-long-arrow-right"></i>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
-            </div> -->
+            </div>
 
-            <!-- <div class="intro-slide intro-slide2 slide-image"
-                style="background-image: url(assets/images/brusa-slider.png); background-color: #edf1f0;">
+            <div class="intro-slide intro-slide2 slide-image"
+                style="background-image: url(assets/images/brusa_banner_1.jpg); background-color: #edf1f0;">
                 <div class="container intro-content" contentAnim aniName="fadeInUpShorter">
                     <div class="banner-summer">
-                        <h3 class="intro-subtitle">SUMMER SPECIAL</h3>
+                        <!-- <h3 class="intro-subtitle">SUMMER SPECIAL</h3>
                         <h1 class="intro-title">Check out most promising product bought by our buyers
                         </h1>
 
                         <a routerLink="/shop/sidebar/list" class="btn btn-outline-dark">
                             <span>Shop Now</span>
                             <i class="icon-long-arrow-right"></i>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
-            </div> -->
+            </div>
         </owl-carousel>
     </div>
 
@@ -149,23 +149,29 @@
         </div>
         <div class="top_cat_slider">
             <owl-carousel-o [options]="customOptions" class="mt-3">
-                <ng-template carouselSlide>
+            <ng-container *ngFor="let data of categoryList">
+
+                <ng-template carouselSlide [id]="data.id">
                     <div class="cat-slide">
-                        <a href=""><img src="assets/images/product-slider-1.png" alt=""></a>
+                        <a [routerLink]="['/product/NutrivillageProducts/',data.id]"><img src="{{data.image}}" alt=""></a>
                         <div class="rating-cat">
-                            <p>Men        <span class="fa fa-star checked side_checked"></span>
+                            <!-- <p>Men        <span class="fa fa-star checked side_checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span></p> 
-                                <h5>Black ripped  overcoat</h5>
-                                <h6>Rs. 750 <del>RS. 900</del></h6>
+                                <span class="fa fa-star checked"></span></p>  -->
+                                <div class="ratings">
+                                    <div class="ratings-val" [style.width]="data.rating * 20 + '%'"></div>
+                                </div>
+                                <h5>{{data.name}}</h5>
+                                <h6>RS. {{data.defaultPrice}} <del>RS. 900</del></h6>
                         </div>
                       
                     </div>
                    
-                </ng-template>  
-                <ng-template carouselSlide>
+                </ng-template> 
+            </ng-container> 
+                <!-- <ng-template carouselSlide>
                     <div class="cat-slide">
                         <a href=""><img src="assets/images/product-slider-2.png" alt=""></a>
                         <div class="rating-cat">
@@ -206,7 +212,7 @@
                                 <h6>Rs. 750 <del>RS. 900</del></h6>
                         </div>
                     </div>
-                </ng-template>
+                </ng-template> -->
               </owl-carousel-o>
         </div>
      
@@ -289,9 +295,23 @@
                     <h1 class="text-center discount"> Get 10% OFF</h1>
                     <p class="text-center inbox">Subscribe to our email and get updates right in your inbox</p>
                     <div class="icon text-center">
-                        <input type="text" placeholder="Enter your email">
-                        <p><button class="btn"><i class="fa-solid fa-paper-plane"></i></button></p>
+                        <form [formGroup]="emailForm">
+                            <input type="text" formControlName ="email" placeholder="Enter your email">
+                        <p><button class="btn" (click)="onSave()" [disabled]="!emailForm.valid"><i class="fa-solid fa-paper-plane"></i></button></p>
+                        </form>
+                        
                     </div>
+
+                    <div *ngIf="emailForm.controls['email'].invalid && (emailForm.controls['email'].dirty || emailForm.controls['email'].touched)" class="alert text-danger">
+                        <div *ngIf="emailForm.controls['email'].errors.required">
+                        Please enter Email
+                      </div>
+                    </div> 
+                    <div *ngIf="emailForm.controls['email'].invalid && (emailForm.controls['email'].dirty || emailForm.controls['email'].touched)" class="alert text-danger">
+                        <div *ngIf="emailForm.controls['email'].errors.pattern">
+                        Please enter valid Email
+                      </div>
+                    </div>  
                 </div>
              
             </div>
@@ -305,19 +325,23 @@
             <div class="col-12">
                 <div class="trending">
                     <h1>Trending Collection</h1>
-                    <p>Check out most tredning collections of this month</p>
+                    <p>Stay on the top of fashion with latest styles</p>
                 </div>
             </div>
         </div>
         <div class="slider_trending">
             <owl-carousel-o [options]="customOptions" class="mt-3">
-                <ng-template carouselSlide>
+            <ng-container *ngFor="let data of categorydata">
+
+                <ng-template carouselSlide [id]="data.id">
                    <div class="side-img">
-                       <img src="../../../../assets/images/trending_1.png" alt="">
-                       <span>Tshirt</span>
+                       <a [routerLink]="['shop/sidebar/list/']" [queryParams]="{category: data.id,'page':1}"><img src="{{data.image}}" alt=""></a>
+                       <span>{{data.name}}</span>
                    </div>
                 </ng-template>  
-                <ng-template carouselSlide>
+            </ng-container>
+
+                <!-- <ng-template carouselSlide>
                     <div class="side-img">
                         <img src="../../../../assets/images/trending_2.png" alt="">
                         <span>Kurti</span>
@@ -334,7 +358,7 @@
                         <img src="../../../../assets/images/trending_1.png" alt="">
                         <span>Dresses</span>
                     </div>
-                </ng-template>
+                </ng-template> -->
               </owl-carousel-o>
         </div>
         <div class="bottom_box">
@@ -354,7 +378,7 @@
             </div>
             <div class="col-lg-8">
                <div class="clip-box clip_box_second">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                   <p>Every new season brings fresh and latest fashion for women. Black Brusa brings you the latest collection of trendy clothes. Our range of latest dresses for women is extensive, spanning from staple articles of women’s clothing such as designer. Get everything you need at one place! </p>
                </div>
             </div>
          </div>

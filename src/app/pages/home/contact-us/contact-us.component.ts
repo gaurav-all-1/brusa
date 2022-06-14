@@ -47,7 +47,7 @@ export class ContactUsComponent implements OnInit {
 				'from_email': email,
 				'from_number': phone,
         'from_message':message,
-        'to_mail':'info@nutrivillage.in',
+        'to_mail':'info@Nutrivillage.in',
         'reply_to':email
 			}
 		  };	

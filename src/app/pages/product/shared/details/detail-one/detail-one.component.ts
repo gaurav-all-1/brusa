@@ -70,12 +70,13 @@ export class DetailOneComponent implements OnInit {
 			// if(cartDataItems.length){
 			// 	this.variantValue=true;
 			// }
+			console.log("inside constructor detail one",this.product)
 			
 	}
 
 	ngOnInit(): void {
 
-		
+		console.log("color",this.product)
 
 
 		// if(this.token){
@@ -129,7 +130,7 @@ export class DetailOneComponent implements OnInit {
 			this.variants.push(this.product['variants'][v]);
 		});
 		console.log(this.variants);
-		this.amount = this.product.variants[0].price;
+		this.amount = this.product.variants[0]['colours'][0]['price'];
 
 	}
 
