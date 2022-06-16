@@ -38,25 +38,33 @@
         <!-- <div class="details-filter-row details-row-size">
             <label>Color:</label>
             <div class="product-nav product-nav-dots">
-                <a href="javascript:;" [class.active]="item.color == selectedVariant.color"
-                    [class.disabled]="item.disabled" [style.background-color]="item.color"
-                    *ngFor="let item of colorArray" (click)="selectColor($event, item)"></a>
+                <div *ngFor="let color of colors">
+                    <input type="radio" name="color" (click)="updateColor(color)" value="{{color}}">{{color}}
+                </div>
             </div>
         </div> -->
 
         <div class="details-filter-row details-row-size">
             <label for="size">Size:</label>
             <div class="select-custom">
-              
                 <select name="size" id="size" class="form-control" (change)="updateVarient($event)">
                     <option value="" >Select a size</option>
-                    <option  *ngFor="let variant of product.variants;" value="{{variant.id}}">{{variant.size}}</option>     
+                    <option  *ngFor="let variant of product.variants;" value="{{variant.size}}">{{variant.size}}</option>     
                 </select>
             </div>
 
             <!-- <a href="javascript:;" class="size-guide mr-4"><i class="icon-th-list"></i>size guide</a>
             <a href="javascript:;" (click)="clearSelection()"
                 *ngIf="selectedVariant.color || selectedVariant.size != ''">clear</a> -->
+        </div>
+
+        <div class="details-filter-row details-row-size">
+            <label>Color:</label>
+            <div class="product-nav product-nav-dots">
+                <div *ngFor="let color of colors">
+                    <input type="radio" name="color" (click)="updateColor(color)" value="{{color}}">{{color}}
+                </div>
+            </div>
         </div>
     </div>
 

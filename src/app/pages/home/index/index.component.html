@@ -302,12 +302,12 @@
                         
                     </div>
 
-                    <div *ngIf="emailForm.controls['email'].invalid && (emailForm.controls['email'].dirty || emailForm.controls['email'].touched)" class="alert text-danger">
+                    <div *ngIf="emailForm.controls['email'].invalid && (emailForm.controls['email'].dirty || emailForm.controls['email'].touched)" class="alert text-danger warn">
                         <div *ngIf="emailForm.controls['email'].errors.required">
                         Please enter Email
                       </div>
                     </div> 
-                    <div *ngIf="emailForm.controls['email'].invalid && (emailForm.controls['email'].dirty || emailForm.controls['email'].touched)" class="alert text-danger">
+                    <div *ngIf="emailForm.controls['email'].invalid && (emailForm.controls['email'].dirty || emailForm.controls['email'].touched)" class="alert text-danger warn">
                         <div *ngIf="emailForm.controls['email'].errors.pattern">
                         Please enter valid Email
                       </div>

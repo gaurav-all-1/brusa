@@ -247,7 +247,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 				"description": "Nutri_village Payment",
 				"image": "http://cloud.flybunch.com/images/faviconnutri.jpeg",
 				"order_id": res.data[0], //razorpay id 
-				"handler":function(response:any){
+				"handler":function(response:any){  	
 					console.log(response);
 					let data = response;
 					// data["order"]={"id":res.data[2}

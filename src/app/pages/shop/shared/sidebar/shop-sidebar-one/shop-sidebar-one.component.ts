@@ -96,7 +96,7 @@ export class ShopSidebarOneComponent implements OnInit {
 							value: len
 						});
 					}
-
+					
 				}
 				console.log("new Obejct3", this.newObject1)
 
@@ -115,7 +115,7 @@ export class ShopSidebarOneComponent implements OnInit {
 
 		this.masterService.getMethod(`/product/getProductsByVariant?variant=${this.variant}`).subscribe(res => {
 			this.vote.emit(res);
-			this.toastrService.success('Filter Applied');
+			this.toastrService.success('Filter Applied');	
 		})
 	}
 

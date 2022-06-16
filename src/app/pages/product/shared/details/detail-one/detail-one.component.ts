@@ -38,6 +38,8 @@ export class DetailOneComponent implements OnInit {
 		price: null,
 		size: ""
 	};
+	size=""
+	colors = []
 	maxPrice = 0;
 	minPrice = 99999;
 	ForDisable:boolean
@@ -75,8 +77,14 @@ export class DetailOneComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.product.variants.forEach((variant)=>{
+			let color = variant.colour;
+			if(!this.colors.includes(color)){
+				this.colors.push(color)
+			}
+		})
 
-		console.log("color",this.product)
+		console.log("color",this.colors)
 
 
 		// if(this.token){
@@ -397,15 +405,31 @@ export class DetailOneComponent implements OnInit {
 	}
 
 	updateVarient(varient:Event){
-		this.variant = $(varient.target).val()
-		console.log(this.variant,this.variantValue);
+		this.size = $(varient.target).val()
+		console.log("size",this.variant,this.variantValue);
+		this.colors = [];
 		for(let x of this.product.variants){
 			console.log(x)
-			if( x.id == this.variant){
+			if( x.size== this.size){
+				if(!this.colors.includes(x.colour)){
+					this.colors.push(x.colour)
+				}
 				this.amount = x.price;
 			}
 		}
 
+	}
+
+	updateColor(color){
+		if(!color || !this.size){
+			this.toastrService.error("please select size or color")
+			return
+		}
+		this.product.variants.forEach((element) => {
+			if(element.size == this.size && element.colour == color){
+				this.variant = element.id;
+			}
+		});
 	}
 
 
