@@ -547,6 +547,52 @@
         right: 42%!important;
     }
 }
+
+@media (max-width:991px) {
+    .banner_sale_img {
+        max-height: 561px !important;
+    }
+    .intro-slide {
+        // background-position: 18% !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        min-height: 20rem;
+    }
+    .intro-slider-container {
+        min-height: 16rem !important;
+    }
+    .banner-group img {
+        max-height: 525px !important;
+    }
+    .home-page .banner-content.banner-content-top {
+        left: 26.2%!important;
+        // top: 1.4% !important;
+    }
+    .deal-content .btn-outline-dark {
+        margin-top: 237px !important;
+    }
+    .deal-container .banner {
+        height: 497px !important;
+    }
+    .deal-container figure {
+        top: 42% !important;
+    }
+    .deal-container .deal-content {
+        padding: 22px 3rem 3.5rem !important;
+    }
+    .last_banner {
+        top: 1.4% !important;
+    }
+    .first_banner {
+        top: -1.6% !important;
+    }
+    .banner{
+        padding-bottom: 12px !important;
+    }
+    .get_deal {
+        width: 100%;
+    }
+}
 .intro-slide {
     background-size: cover;
     background-repeat: no-repeat;

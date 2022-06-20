@@ -41,11 +41,12 @@ export class IndexComponent implements OnInit {
 		 private toaster:ToastrService) {
 		// this.modalService.openNewsletter();
 
-		this.apiService.fetchHomeData().subscribe(result => {
-			this.products = result.products;
-			this.posts = result.blogs;
-			this.loaded = true;
-		})
+		// this.apiService.fetchHomeData().subscribe(result => {
+		// 	this.products = result.products;
+		// 	this.posts = result.blogs;
+		// 	this.loaded = true;
+		// })
+		// this.getlist()
 
 		this.emailForm = new FormGroup({
 			email : new FormControl("",[Validators.required,Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$")])
@@ -63,8 +64,7 @@ export class IndexComponent implements OnInit {
 	}
 
 	offerList(){
-		this.master.getMethod('/offer/list').subscribe(res=>{
-			// console.log("offerslist",res);	
+		this.master.getMethod('/offer/list').subscribe(res=>{	
 			this.getoffer = res
 			console.log("offerlist",this.getoffer)
 			localStorage.setItem("offerData",JSON.stringify(res));
@@ -145,9 +145,11 @@ export class IndexComponent implements OnInit {
 
 	getlist(){
 		this.master.getMethod("/GetCategories").subscribe(data=>{
-			this.categorydata=JSON.parse(JSON.stringify(data));
-			this.category.setCategoryList(this.categoryList)
-			console.log("list-slider",this.categoryList)
+			// console.log(data);
+			// this.categorydata=data;
+			// console.log("this.categoryList",this.categoryList)
+			this.category.setCategoryList(data)
+			// console.log("list-slider",this.categoryList)
 	})
 }
 
