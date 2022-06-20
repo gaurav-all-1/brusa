@@ -141,6 +141,7 @@ export class SidebarPageComponent implements OnInit {
 			document.querySelector('body').classList.add('sidebar-filter-active');
 	}
 
+
 	hideSidebar() {
 		document.querySelector('body').classList.remove('sidebar-filter-active');
 	}
@@ -163,6 +164,5 @@ export class SidebarPageComponent implements OnInit {
 	onVoted2(e:any){
 		console.log("llisten fron gaurav",e)
 		this.products = e;
-		
 	}
 }

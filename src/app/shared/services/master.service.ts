@@ -35,6 +35,7 @@ export class MasterService {
   }
 
   header(){
+    this.userToken=localStorage.getItem('token');
     if(this.userToken){
       return   {
         headers: new HttpHeaders({

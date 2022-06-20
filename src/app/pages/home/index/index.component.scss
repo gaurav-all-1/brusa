@@ -147,6 +147,24 @@
     background-color: #323232;
     color: #fff;
 }
+.shop-redirect .btn:hover {
+    background-color: #0e2c5e;
+}
+.shop-redirect a {
+    color: #fff !important;
+}
+.shop-redirect a:hover {
+    color: none !important;
+}
+.offervalue-redirect .btn:hover {
+    background-color: #0e2c5e;
+}
+.offervalue-redirect a {
+    color: #fff !important;
+}
+.offervalue-redirect a:hover {
+    color: none !important;
+}
 .sale {
     height: 89%;
     position: relative;
@@ -532,5 +550,10 @@
 .intro-slide {
     background-size: cover;
     background-repeat: no-repeat;
+}
+.sale_img{
+    background-image: url("../../../../assets/images/arrival_3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 

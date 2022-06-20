@@ -30,8 +30,9 @@ export class ProductcheckoutComponent implements OnInit {
   offervalue:any
   discountoffer:any
   discount:number=0;
- paymentMode:any;
+ paymentMode="RZP";
  varient:number;
+ token:any=localStorage.getItem("token");
 
 
   constructor(private formBuilder: FormBuilder,
@@ -78,10 +79,9 @@ export class ProductcheckoutComponent implements OnInit {
       this.discountoffer = this.total
       console.log(this.total)
       if(this.offervalue.length != 0){
-        this.discount = this.offervalue[0].amount*this.change
+        this.discount = this.offervalue[0].discountType == "PERCENT"?(this.offervalue[0].amount*this.discountoffer)/100:this.offervalue[0].amount*this.change
         this.discountoffer = this.discountoffer - this.discount;
       }
-
       console.log("amout",this.discountoffer)
     })
 
@@ -107,109 +107,208 @@ export class ProductcheckoutComponent implements OnInit {
 
   }
 
-  onItemChange(e:any){
-	// console.log(" Value is : ", e.target.value );
-	this.paymentMode = e.target.value
-	console.log(this.paymentMode)
- }
+//   onItemChange(e:any){
+// 	// console.log(" Value is : ", e.target.value );
+// 	this.paymentMode = e.target.value
+// 	console.log(this.paymentMode)
+//  }
 
   get f(): { [key: string]: AbstractControl } {
 		return this.userForm.controls;
 	  }
 
-  placeorder(){
-		this.loader = true;
-    this.submitted = true;
-
-		if (this.userForm.invalid) {
-		this.loader = false;
-		  return;
-		}
-
-
-    const data={
-			"productId":this.pid,
-      "variantId":this.varient,
-      "quantity":this.change,
-			"paymentMethod":this.paymentMode,
-			"amount":this.discountoffer,
-			"shippingAddress":{
-			  "name":this.userForm.get("firstName")?.value + this.userForm.get("lastName")?.value,
-			  "country":this.userForm.get("country")?.value,
-			  "street":this.userForm.get("address")?.value,
-			  "state":this.userForm.get("state")?.value,
-			  "city":this.userForm.get("city")?.value,
-			  "pincode":this.userForm.get("pinNumber")?.value,
-			  "mobile":this.userForm.get("Phone")?.value,
-			  "email":this.userForm.get("Email")?.value
-			}
-		}
-		console.log("cart",this.pid)
-		// location.reload()
-	// console.log("card-remove",this.cartService.removeFromCart(this.cartItems))
-		this.master.methodPost(data,"/order/product").subscribe(res=>{
-			console.log(res, res.msg=="make payment");
-			this.loader = false;
-			if(!res.status){
-			  alert("something Wrong check once again")
-			}
-			if( res.msg=="make payment"){
-				console.log("hi");
-			  var options = {
-				"key": environment.razorKey, // Enter the Key ID generated from the Dashboard
-				"amount": res.data[1], // razorpay amount 
-				"currency": "INR",
-				"name": "Nutri-Village",
-				"description": "Nutri_village Payment",
-				"image": "http://cloud.flybunch.com/images/faviconnutri.jpeg",
-				"order_id": res.data[0], //razorpay id 
-				"handler":function(response:any){
-					console.log(response);
-					let data = response;
-					// data["order"]={"id":res.data[2}
-					var event = new CustomEvent("successPayment",{
-						detail:data,
-						bubbles:true,
-						cancelable:true
-					})
-				 	window.dispatchEvent(event);
-				},
-				"prefill": {
-					"name": "Gaurav Kumar",
-					"email": "gaurav.kumar@example.com",
-					"contact": "9999999999"
-				},
-				"notes": {
-					"address": "Razorpay Corporate Office"
-				},
-				"theme": {
-					"color": "#0e2c5e"
-				}};
-				var rzp1 = new Razorpay(options);
-				rzp1.open();
-				rzp1.on('payment.failed', function (response: any) {
-				//   Todo - store this information in the server
-				  console.log(response.error.code);
-				  console.log(response.error.description);
-				  console.log(response.error.source);
-				  console.log(response.error.step);
-				  console.log(response.error.reason);
-				  console.log(response.error.metadata.order_id);
-				  console.log(response.error.metadata.payment_id);
-				}
-				);
-			}else{
-			this.loader = false;
-				alert("you have created order by cod")
+	  placeorder(){
+		if(this.token){
+		  this.loader = true;
+		  this.submitted = true;
+	  
+			  if (this.userForm.invalid) {
+			  this.loader = false;
+				return;
 			  }
-			},error=>{
-			this.loader = false;
-				this.toaster.error("internal server error");
-			})
-
-
-    
-  }
+	  
+	  
+		  const data={
+				  "productId":this.pid,
+			"variantId":this.varient,
+			"quantity":this.change,
+				  "paymentMethod":this.paymentMode,
+				  "amount":this.discountoffer,
+				  "shippingAddress":{
+					"name":this.userForm.get("firstName")?.value + this.userForm.get("lastName")?.value,
+					"country":this.userForm.get("country")?.value,
+					"street":this.userForm.get("address")?.value,
+					"state":this.userForm.get("state")?.value,
+					"city":this.userForm.get("city")?.value,
+					"pincode":this.userForm.get("pinNumber")?.value,
+					"mobile":this.userForm.get("Phone")?.value,
+					"email":this.userForm.get("Email")?.value
+				  }
+			  }
+			  console.log("cart",this.pid)
+			  // location.reload()
+		  // console.log("card-remove",this.cartService.removeFromCart(this.cartItems))
+			  this.master.methodPost(data,"/order/product").subscribe(res=>{
+				  console.log(res, res.msg=="make payment");
+				  this.loader = false;
+				  if(!res.status){
+					alert("something Wrong check once again")
+				  }
+				  if( res.msg=="make payment"){
+					  console.log("hi");
+					var options = {
+					  "key": environment.razorKey, // Enter the Key ID generated from the Dashboard
+					  "amount": res.data[1], // razorpay amount 
+					  "currency": "INR",
+					  "name": "Black Brusa",
+					  "description": "Black Brusa Payment",
+					  "image": "http://cloud.flybunch.com/images/fevicon_blackbrusa.png",
+					  "order_id": res.data[0], //razorpay id 
+					  "handler":function(response:any){
+						  console.log(response);
+						  let data = response;
+						  // data["order"]={"id":res.data[2}
+						  var event = new CustomEvent("successPayment",{
+							  detail:data,
+							  bubbles:true,
+							  cancelable:true
+						  })
+					   window.dispatchEvent(event);
+					  },
+					  "prefill": {
+						  "name": "Gaurav Kumar",
+						  "email": "gaurav.kumar@example.com",
+						  "contact": "9999999999"
+					  },
+					  "notes": {
+						  "address": "Razorpay Corporate Office"
+					  },
+					  "theme": {
+						  "color": "#0e2c5e"
+					  }};
+					  var rzp1 = new Razorpay(options);
+					  rzp1.open();
+					  rzp1.on('payment.failed', function (response: any) {
+					  //   Todo - store this information in the server
+						console.log(response.error.code);
+						console.log(response.error.description);
+						console.log(response.error.source);
+						console.log(response.error.step);
+						console.log(response.error.reason);
+						console.log(response.error.metadata.order_id);
+						console.log(response.error.metadata.payment_id);
+					  }
+					  );
+				  }else{
+				  this.loader = false;
+				  this.toaster.success("You have created order by cod")
+				  this.route.navigate(["/success"])
+					}
+				  },error=>{
+				  this.loader = false;
+					  this.toaster.error("internal server error");
+				  })
+	  
+		}
+		  else{
+			  this.loader = true;
+	  this.submitted = true;
+  
+		  if (this.userForm.invalid) {
+		  this.loader = false;
+			return;
+		  }
+  
+  
+	  const data={
+			  "productId":this.pid,
+		"variantId":this.varient,
+		"quantity":this.change,
+			  "paymentMethod":this.paymentMode,
+			  "amount":this.discountoffer,
+			  "shippingAddress":{
+				"name":this.userForm.get("firstName")?.value +" "+ this.userForm.get("lastName")?.value,
+				"country":this.userForm.get("country")?.value,
+				"street":this.userForm.get("address")?.value,
+				"state":this.userForm.get("state")?.value,
+				"city":this.userForm.get("city")?.value,
+				"pincode":this.userForm.get("pinNumber")?.value,
+				"mobile":this.userForm.get("Phone")?.value,
+				"email":this.userForm.get("Email")?.value
+			  }
+		  }
+		  console.log("cart",this.pid)
+		  // location.reload()
+	  // console.log("card-remove",this.cartService.removeFromCart(this.cartItems))
+		  this.master.methodPost(data,"/order/guest").subscribe(res=>{
+			  console.log("guest",res)
+			  localStorage.setItem("token", res['response'].guestToken);
+			  localStorage.setItem("userId", res['response'].guestId);
+			  console.log(res, res.msg=="make payment");
+			//   alert( res['response'].guestToken)
+			  this.loader = false;
+			  if(!res.status){
+				alert("something Wrong check once again")
+			  }
+			  if( res.msg=="make payment"){
+				  console.log("hi");
+				var options = {
+				  "key": environment.razorKey, // Enter the Key ID generated from the Dashboard
+				  "amount": res.data[1], // razorpay amount 
+				  "currency": "INR",
+				  "name": "Black Brusa",
+				  "description": "Black Brusa Payment",
+				  "image": "http://cloud.flybunch.com/images/fevicon_blackbrusa.png",
+				  "order_id": res.data[0], //razorpay id 
+				  "handler":function(response:any){
+					  console.log(response);
+					  let data = response;
+					  // data["order"]={"id":res.data[2}
+					  var event = new CustomEvent("successPayment",{
+						  detail:data,
+						  bubbles:true,
+						  cancelable:true
+					  })
+				   window.dispatchEvent(event);
+				  },
+				  "prefill": {
+					  "name": "Gaurav Kumar",
+					  "email": "gaurav.kumar@example.com",
+					  "contact": "9999999999"
+				  },
+				  "notes": {
+					  "address": "Razorpay Corporate Office"
+				  },
+				  "theme": {
+					  "color": "#0e2c5e"
+				  }};
+				  var rzp1 = new Razorpay(options);
+				  rzp1.open();
+				  rzp1.on('payment.failed', function (response: any) {
+				  //   Todo - store this information in the server
+					console.log(response.error.code);
+					console.log(response.error.description);
+					console.log(response.error.source);
+					console.log(response.error.step);
+					console.log(response.error.reason);
+					console.log(response.error.metadata.order_id);
+					console.log(response.error.metadata.payment_id);
+				  }
+				  );
+			  }else{
+			  this.loader = false;
+			  this.toaster.success("You have created order by cod")
+				  window.location.href = '/success';
+				}
+			  },error=>{
+			  this.loader = false;
+				  this.toaster.error("internal server error");
+			  })
+  
+		  }
+  
+	  
+	}
 
   @HostListener('window:paymentSuccess',['$event'])
 			paymentSuccess(event:any){
@@ -249,7 +348,8 @@ export class ProductcheckoutComponent implements OnInit {
 				if(res.status){
 				  this.toaster.success("payment successful by rzp")
 				//   this.route.navigate(["shop/dashboard"])
-				this.route.navigate(["/success"])
+				// this.route.navigate(["/success"])
+				window.location.href = '/success';
 				//  location.reload()
 				}else{
 				  this.toaster.error("payment failed");

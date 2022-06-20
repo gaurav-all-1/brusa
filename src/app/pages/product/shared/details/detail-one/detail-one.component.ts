@@ -226,7 +226,6 @@ export class DetailOneComponent implements OnInit {
 
 	buyNowLink(event: Event)
 	{
-		if(this.token){
 		event.preventDefault();
 		if(!this.variant)
 		{
@@ -238,9 +237,6 @@ export class DetailOneComponent implements OnInit {
 			// this.router.navigate(['/shop/productcheckout/'],{queryParams: {productid:this.product.id,varientid:this.variant}});
 			
 		}
-	}else{
-		this.modalService.showLoginModal();
-	}
 
 	}
 
@@ -373,7 +369,7 @@ export class DetailOneComponent implements OnInit {
 		}
 		this.refreshSelectableGroup();
 	}
-
+	
 	onChangeQty(current: number) {
 		this.qty = current;
 		this.offerservice.setqty(this.qty)

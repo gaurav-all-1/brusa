@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 	cardData1:any
 	cart_id:any
 	rzrRes:any=[]
- paymentMode:any;
+ paymentMode="RZP";
 	userForm:any
 	submitted = false;
 	productId:any=[]
@@ -74,7 +74,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 			 let offerProductIdResponse = this.getofferListByProductId((data[cartItem]['inventory']['product'].id));		
 			 console.log("hello",offerProductIdResponse);
 
-			if(offerProductIdResponse.length){
+			if(offerProductIdResponse?.length){
 				let amount = offerProductIdResponse[0].discountType == "PERCENT"? (offerProductIdResponse[0].amount *data[cartItem]['inventory'].price)/100:offerProductIdResponse[0].amount;
 				if(this.discount)
 				{
@@ -83,7 +83,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 					this.discount = amount * data[cartItem]['quantity'];
 				}
 			}
-
+			
 			console.log("disCount",this.discount); 
 			this.finalamount = this.totalAmount-this.discount
 			this.totalQuantity += parseInt(data[cartItem]['quantity']);
@@ -124,11 +124,11 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 		   );
 	}
 
-	onItemChange(e:any){
-		// console.log(" Value is : ", e.target.value );
-		this.paymentMode = e.target.value
-		console.log(this.paymentMode)
-	 }
+	// onItemChange(e:any){
+	// 	// console.log(" Value is : ", e.target.value );
+	// 	this.paymentMode = e.target.value
+	// 	console.log(this.paymentMode)
+	//  }
 
 
 	getofferListByProductId(productId){
@@ -146,6 +146,22 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 		return response;
 		}
 	  }
+
+	//   getofferListByCategoryId(categoryId){
+	// 	console.log("hi product",categoryId)
+	// 	let offerData1 = localStorage.getItem("offerData");
+	// 	if(offerData1)
+	// 	{
+	// 		let	offerJsonData1 = JSON.parse(offerData1);
+
+		
+	// 	let categoryList = offerJsonData1;
+	// 	// this.setofferList(productList);
+	// 	console.log(categoryList)
+	// 	let response = categoryList.filter( res=> res.category?.id == categoryId);
+	// 	return response;
+	// 	}
+	//   }
 
 	getId(){
 		debugger;
@@ -245,7 +261,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 				"currency": "INR",
 				"name": "Nutri-Village",
 				"description": "Nutri_village Payment",
-				"image": "http://cloud.flybunch.com/images/faviconnutri.jpeg",
+				"image": "http://cloud.flybunch.com/images/fevicon_blackbrusa.png",
 				"order_id": res.data[0], //razorpay id 
 				"handler":function(response:any){  	
 					console.log(response);

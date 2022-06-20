@@ -7,7 +7,7 @@
                 <span class="product-label label-top" *ngIf="product.top">Top</span>
                 <span class="product-label label-out" *ngIf="product.qty || product.qty == 0">Out Of Stock</span>
                
-                <a [routerLink]="['/product/NutrivillageProducts/'+ product.id]">
+                <a [routerLink]="['/product/BlackBrusaProducts/'+ product.id]">
                    
                     <molla-image [src]="product.image" alt="Product"
                         
@@ -30,7 +30,7 @@
                 </div>
 
                 <h3 class="product-title">
-                    <a [routerLink]="['/product/NutrivillageProducts/'+ product.id]">{{product.name }}</a>
+                    <a [routerLink]="['/product/BlackBrusaProducts/'+ product.id]">{{product.name }}</a>
                 </h3>
 
                 <!-- <div class="product-content">

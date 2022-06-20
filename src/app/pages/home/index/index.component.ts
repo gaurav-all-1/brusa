@@ -39,7 +39,7 @@ export class IndexComponent implements OnInit {
 		 private master:MasterService,
 		 private category:CategoryService,
 		 private toaster:ToastrService) {
-		this.modalService.openNewsletter();
+		// this.modalService.openNewsletter();
 
 		this.apiService.fetchHomeData().subscribe(result => {
 			this.products = result.products;
@@ -51,26 +51,26 @@ export class IndexComponent implements OnInit {
 			email : new FormControl("",[Validators.required,Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$")])
 		  })
 	}
-
+	
 	// guar
 
 	ngOnInit(): void {
 	
-		// this.offerList()
+		this.offerList()
 		this.getlist()
 		this.getproduct()
 		
 	}
 
-	// offerList(){
-	// 	this.master.getMethod('/offer/list').subscribe(res=>{
-	// 		// console.log("offerslist",res);
-	// 		this.getoffer = res
-	// 		console.log("offerlist",this.getoffer)
-	// 		localStorage.setItem("offerData",JSON.stringify(res));
-	// 		// this.offerService.setofferList(res);
-	// 	})
-	// }
+	offerList(){
+		this.master.getMethod('/offer/list').subscribe(res=>{
+			// console.log("offerslist",res);	
+			this.getoffer = res
+			console.log("offerlist",this.getoffer)
+			localStorage.setItem("offerData",JSON.stringify(res));
+			// this.offerService.setofferList(res);
+		})
+	}
 
 
 	// onsubmit(){
@@ -149,8 +149,6 @@ export class IndexComponent implements OnInit {
 			this.category.setCategoryList(this.categoryList)
 			console.log("list-slider",this.categoryList)
 	})
-
-
 }
 
 getproduct(){

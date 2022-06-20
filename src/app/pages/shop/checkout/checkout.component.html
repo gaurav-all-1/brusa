@@ -170,7 +170,7 @@
                                     <tbody>
                                         <tr *ngFor="let product of cartData">
                                             <td><a
-                                                    [routerLink]="['/product/NutrivillageProducts/'+ product.inventory.product.id]">{{ product.inventory.product.name }}</a>
+                                                    [routerLink]="['/product/BlackBrusaProducts/'+ product.inventory.product.id]">{{ product.inventory.product.name }}</a>
                                             </td>
                                             <td><i class="fa-solid fa-indian-rupee-sign"></i>{{product.quantity * product.inventory.price}}</td>
                                         </tr>
@@ -193,7 +193,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-
+<!-- 
                                 <div>
                                     <div class="form-check first_box">
                                         <input class="form-check-input" type="radio" value="RZP" (change)="onItemChange($event)" name="flexRadioDefault" id="flexRadioDefault1">
@@ -201,13 +201,13 @@
                                           Online Payment
                                         </label>
                                       </div>
-                                      <!-- <div class="form-check second_box">
+                                      <div class="form-check second_box">
                                         <input class="form-check-input" type="radio" value="COD" (change)="onItemChange($event)" name="flexRadioDefault" id="flexRadioDefault2" checked>
                                         <label class="form-check-label" for="flexRadioDefault2">
                                           Cash on deleivery
                                         </label>
-                                      </div> -->
-                                </div>
+                                      </div>
+                                </div> -->
                               
                                   
 

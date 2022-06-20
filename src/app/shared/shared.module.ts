@@ -52,7 +52,7 @@ import { CountToComponent } from './components/count-to/count-to.component';
 import { QuickViewComponent } from './components/modals/quick-view/quick-view.component';
 import { QuickViewTwoComponent } from './components/modals/quick-view-two/quick-view-two.component';
 import { VideoModalComponent } from './components/modals/video-modal/video-modal.component';
-import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
+// import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
 import { IsotopeGridComponent } from './components/isotope-grid/isotope-grid.component';
 import { ImageComponent } from './components/image/image.component';
@@ -112,7 +112,7 @@ import { SingleComponent } from './single/single.component';
 		PageHeaderComponent,
 		QuickViewComponent,
 		QuickViewTwoComponent,
-		NewsletterModalComponent,
+		// NewsletterModalComponent,
 		LoginModalComponent,
 		VideoModalComponent,
 		QuantityInputComponent,
@@ -216,7 +216,7 @@ import { SingleComponent } from './single/single.component';
 		VideoModalComponent,
 		QuickViewComponent,
 		QuickViewTwoComponent,
-		NewsletterModalComponent,
+		// NewsletterModalComponent,
 		LoginModalComponent
 	]
 })

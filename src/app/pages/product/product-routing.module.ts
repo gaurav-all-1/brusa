@@ -13,7 +13,7 @@ import { DefaultPageComponent } from './default/default.component';
 
 const routes: Routes = [
     {
-        path: 'NutrivillageProducts/:slug',
+        path: 'BlackBrusaProducts/:slug',
         component: DefaultPageComponent
     }
    
