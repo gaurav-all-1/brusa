@@ -152,6 +152,7 @@
 }
 .shop-redirect a {
     color: #fff !important;
+    text-align: center;
 }
 .shop-redirect a:hover {
     color: none !important;
@@ -172,12 +173,12 @@
 .offer-value {
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 0;
 }
 .offervalue-redirect {
     position: absolute;
-    right: 0;
-    bottom: 24px;
+    left: 0;
+    bottom: 0;
 }
 .offer-value p {
     color: #fff;
@@ -467,20 +468,23 @@
     height: 70px;
 }
 
-
-//  
-// ::ng-depp .owl-theme .owl-nav .owl-prev {
-//     margin-top: 3% !important;
-// }
-// ::ng-deep .owl-theme .owl-nav .owl-next {
-//     margin-top: 3% !important;
-// }
-
 .inbox {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
     font-family: 'Ubuntu', sans-serif;
+}
+a{
+    cursor: pointer;
+}
+.Subsciber-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Subsciber-section h1 {
+    margin-bottom: 0 !important;
+    
 }
 
 // media querry
@@ -489,32 +493,31 @@
     .darkVideo-mode video{
         height: 25vh;
     }
+    .subscribe_input{
+        margin-top: 0 !important;
+    }
+    // .Subsciber-section{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
     .subscribe_input {
         width: 90%;
         margin: 0 auto;
     }
-    .mat-typography p {
+    .paraSection {
         margin: 0 !important;
     }
-    .btn[_ngcontent-fnu-c70] i[_ngcontent-fnu-c70]:last-child{
+    .btn i:last-child{
         margin-left: 0 !important;
-        font-size: 2.4rem;
-    }
-    .form input{
-        border: 1px solid red;
-    }
-    .form p{
-        border: 1px solid red;
     }
     .form button{
-        border: 1px solid red;
         bottom: 0 !important;
     }
     .form button i{
         margin-left: 0 !important;
     }
     form{
-        border: 1px solid red;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -522,40 +525,146 @@
     .icon .btn{
         bottom: 0 !important;
     }
+    .btn{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important;
+    }
     .btn i:last-child{
         margin-left: 0 !important;
     }
     .icon input{
-        width: 100%;
+        width: 90%;
     }
-    .icon i{
-        font-size: 2.5rem;
+    form p{
+        width: 20%;
+    }
+    .discount{
+        margin-bottom: 0 !important;
     }
     .helBtn{
         width: auto;
         padding: 0;
     }
+    #Going_on{
+        height: 440px;
+        background-position: center;
+    }
+    #subscribe{
+        background-position: center;
+        height: 310px;
+    }
+    .shop-redirect .btn-1{
+        left: 0;
+        width: 30%;
+    }
+    .shop-redirect .btn-1 a{
+        width: 100%;
+        text-align: center !important;
+    }
+    .arrival-button .btn-2{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+    }
+    .arrival-button .btn-2 a{
+        width: 100%;
+        text-align: center;
+    }
+    .offervalue-redirect a{
+        width: 100%;
+    }
+    // .owl-theme .owl-nav .owl-prev{
+    //     left: 36% !important;
+    // }
+    // .owl-theme .owl-nav .owl-next {
+    //     right: 36% !important;
+    // }
+    ::ng-deep .owl-theme .owl-nav .owl-prev{
+        left: 36% !important;
+    }
+    ::ng-deep .owl-theme .owl-nav .owl-next {
+        right: 36% !important;
+    }
+    #Going_on .box {
+        width: 100%;
+        padding: 2rem;
+        height: 259px;
+        top: 138px;
+    }
 }
 
-@media (max-width:767px){
+@media (max-width:769px){
+    .darkVideo-mode video{
+        height: 50vh !important;
+    }
+    .subscribe_input {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .paraSection {
+        margin: 0 !important;
+    }
+    .btn i:last-child{
+        margin-left: 0 !important;
+    }
+    .form button{
+        bottom: 0 !important;
+    }
+    .form button i{
+        margin-left: 0 !important;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon .btn{
+        bottom: 0 !important;
+    }
+    .btn{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important;
+    }
+    .btn i:last-child{
+        margin-left: 0 !important;
+    }
+    .icon input{
+        width: 40%;
+    }
+    form p{
+        width: 20%;
+    }
+    .main-sale-section{
+        width: 100%;
+        padding-left: 29rem;
+    }
+    #Going_on .box{
+        height: auto !important;
+    }
+    .clip_box_second{
+        padding: 25px 127px 1px 54px;
+    }
     .offervalue-redirect{
         text-align: end;
     }
     .offer-1{
         margin-top: 1%;
     }
-    .check_child_1 {
-        width: 50%;
-        margin: 0 auto;
-        text-align: center;
-    }
-    .check_child_2 {
-        width: 50%;
-        margin: 0 auto;
-    }
-    .check {
-        margin-top: 18%;
-    }
+    // .check_child_1 {
+    //     width: 50%;
+    //     margin: 0 auto;
+    //     text-align: center;
+    // }
+    // .check_child_2 {
+    //     width: 50%;
+    //     margin: 0 auto;
+    // }
+    // .check {
+    //     margin-top: 18%;
+    // }
     .arrival-button {
         bottom: 4px;
     }
@@ -581,7 +690,7 @@
         margin-top: 11rem !important;
     }
     .subscribe_input {
-        margin-top: 28%;
+        margin-top: 10%;
     } 
     .discount {
         font-size: 25px;

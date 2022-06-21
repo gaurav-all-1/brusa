@@ -71,7 +71,7 @@
                         <h1>SALE!</h1>
                     </div>
                     <div class="text-right shop-redirect">
-                        <button class="btn"><a [routerLink]="['/product/BlackBrusaProducts/',getoffer[0].product.id]">Shop</a></button>
+                        <button class="btn btn-1"><a [routerLink]="['/product/BlackBrusaProducts/',getoffer[0].product.id]">Shop</a></button>
                     </div>
                 </div>
             </div>
@@ -84,8 +84,8 @@
                         <p>Up To  {{this.getoffer[2].amount}}% Off</p>
                         <h1>SALE!</h1>
                       </div>
-                      <div class="col-lg-6 offervalue-redirect">
-                        <button class="btn"><a [routerLink]="['/product/BlackBrusaProducts/',getoffer[2].product.id]">Shop</a></button>
+                      <div class="col-lg-6 col-12 offervalue-redirect">
+                        <button class="btn btn-1"><a [routerLink]="['/product/BlackBrusaProducts/',getoffer[2].product.id] " class="text-center">Shop</a></button>
                     </div>
                   </div>
                 </div>
@@ -120,7 +120,7 @@
                         <div class="sale_img">
                             <!-- <img src="assets/images/arrival_3.png" alt=""> -->
                             <div class="arrival-button">
-                                <button class="btn">New Arrivals</button>
+                                <button class="btn btn-2">New Arrivals</button>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                         <div class="sale_img">
                             <img src="assets/images/arrival_4.png" alt="">
                             <div class="arrival-button">
-                                <button class="btn">Party Outfit</button>
+                                <button class="btn btn-2">Party Outfit</button>
                             </div>
                         </div>
                     </div>
@@ -261,13 +261,12 @@
               </div>
             
           </div>
-          <div class="col-lg-3 col-md-3 col-12 check">
+          <div class="col-lg-3 col-md-12 col-12 check">
               <div class="check_child_1">
-                  <div class="check_child_2">
-                <img src="../../../../assets/images/onsale.png" alt="">
-
+                  <div class="check_child_2 main-sale-section">
+                    <img src="../../../../assets/images/onsale.png" alt="">
+                    <button class="btn mt-3">CHECK CLERANCE</button>
                   </div>
-              <button class="btn mt-3">CHECK CLERANCE</button>
               </div>
           </div>
       </div>
@@ -282,8 +281,9 @@
                 <div class="subscribe_input">
                     <div class="row">
                         <div class="col-12">
-                          <div class="text-subscribe ">
+                          <div class="text-subscribe Subsciber-section">
                               <h1 class="discount text-center" style="color: #fff;">Subscibe</h1>
+                              <img src="../../../../assets/images/bblogo (1).png" alt="">
                           </div>  
                         </div>
                         <!-- <div class="col-6">
@@ -297,7 +297,7 @@
                     <div class="icon text-center">
                         <form [formGroup]="emailForm" class="mobile-form">
                             <input type="text" formControlName ="email" placeholder="Enter your email">
-                            <p><button class="btn helBtn" (click)="onSave()" [disabled]="!emailForm.valid"><i class="fa-solid fa-paper-plane"></i></button></p>
+                            <p class="paraSection"><button class="btn helBtn" (click)="onSave()" [disabled]="!emailForm.valid"><i class="fa-solid fa-paper-plane"></i></button></p>
                         </form>
                         
                     </div>
