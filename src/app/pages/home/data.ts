@@ -4,6 +4,10 @@ export const introSlider = {
     ...sliderOpt,
     nav: false,
     loop: false,
+    autoplay: true,
+	autoplaySpeed:5000,
+
+    // autoplayTimeout: 40000,
 }
 
 export const brandSlider = {

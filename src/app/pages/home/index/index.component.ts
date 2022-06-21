@@ -121,6 +121,8 @@ export class IndexComponent implements OnInit {
 		touchDrag: true,
 		pullDrag: true,
 		dots: true,
+		autoplay: true,
+		autoplaySpeed:3000,
 		navSpeed: 700,
 		navText: ['', ''],
 		responsive: {
@@ -146,7 +148,7 @@ export class IndexComponent implements OnInit {
 	getlist(){
 		this.master.getMethod("/GetCategories").subscribe(data=>{
 			// console.log(data);
-			// this.categorydata=data;
+			this.categorydata=data;
 			// console.log("this.categoryList",this.categoryList)
 			this.category.setCategoryList(data)
 			// console.log("list-slider",this.categoryList)
