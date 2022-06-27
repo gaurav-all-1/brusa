@@ -5,7 +5,7 @@ export const introSlider = {
     nav: false,
     loop: false,
     autoplay: true,
-	autoplaySpeed:5000,
+    autoplayTimeout:5000
 
     // autoplayTimeout: 40000,
 }

@@ -58,16 +58,17 @@
                 *ngIf="selectedVariant.color || selectedVariant.size != ''">clear</a> -->
         </div>
 
-        <div class="details-filter-row details-row-size">
+        <div  class="details-filter-row details-row-size">
             <label>Color:</label>
             <div class="product-nav product-nav-dots">
                 <div class="color_set" *ngFor="let color of colors">
                     <input type="radio" name="color" (click)="updateColor(color)" value="{{color}}">{{color}}
+                    <!-- <a [ngStyle]="{'backgroundColor': getcolor}"></a> -->
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!-- <div class="variation-price" style="display: none;">
         <div class="product-price">
             ${{ selectedVariant.price ? selectedVariant.price.toFixed( 2 ) : 0 }}

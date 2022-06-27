@@ -43,6 +43,7 @@ export class DetailOneComponent implements OnInit {
 	maxPrice = 0;
 	minPrice = 99999;
 	ForDisable:boolean
+	// getcolor="red";
 	qty = 1;
 	variantValue:boolean=false;
 	newValue:boolean=true;
@@ -83,7 +84,7 @@ export class DetailOneComponent implements OnInit {
 				this.colors.push(color)
 			}
 		})
-
+		
 		console.log("color",this.colors)
 
 
