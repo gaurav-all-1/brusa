@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Product } from 'src/app/shared/classes/product';
 
@@ -10,6 +10,7 @@ import { CompareService } from 'src/app/shared/services/compare.service';
 
 import { environment } from 'src/environments/environment';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { MasterService } from 'src/app/shared/services/master.service';
 
 @Component({
 	selector: 'molla-product-eleven',
@@ -19,65 +20,120 @@ import { ApiService } from 'src/app/shared/services/api.service';
 
 export class ProductElevenComponent implements OnInit {
 
-	@Input() product: Product;
-	@Input() products = [];
+	@Input() product:any=[];
+	@Output() getvalue = new EventEmitter<any>();
+	getrating:any
 
 	maxPrice = 0;
 	minPrice = 99999;
+	productid:any
+	productlist:any=[]
+	params = {};
+	pageNo = 0;
 
 	SERVER_URL = environment.SERVER_URL;
+	categoryService: any;
 
 	constructor(
 		private router: Router,
+		private route:ActivatedRoute,
 		private modalService: ModalService,
 		private cartService: CartService,
 		private wishlistService: WishlistService,
 		private compareService: CompareService,
-		private apiservice:ApiService
-	) { }
-	ngOnChanges(products:any): void {
-		this.products = products.products.currentValue
-		console.log("hello",products)
+		private apiServices:ApiService,
+		private master:MasterService,
+		public activeRoute: ActivatedRoute
+	){
+		this.route.queryParamMap.subscribe(params =>{ 
+			this.productid=params.get("category")
+			this.pageNo = parseInt(params.get("page"))}
+			);
+			// this.master.getMethod(`/product/list/${this.productid}?page=${this.pageNo-1}&size=10&isCacheable=true`).subscribe(res=>{
+			// 	console.log("cat-pro",res)
+			// 	this.products=res['data'];
+			// 	console.log("get-product",this.products)
+			// 	this.getvalue.emit({prducts:this.products.length,totalPage:res["totalPage"]})
+			// 	console.log("get-product1234",this.products.length)				
+			// })									
+
 	}
 
+	
 	ngOnInit(): void {
-		console.log("gaurav",this.products)
-		
+
+	
+
+		// this.allproduct()
+
+	
 		let min = this.minPrice;
 		let max = this.maxPrice;
 
-		this.product.variants.map(item => {
-			if (min > item.price) min = item.price;
-			if (max < item.price) max = item.price;
-		}, []);
+		// this.products.variants.map(item => {
+		// 	if (min > item.price) min = item.price;
+		// 	if (max < item.price) max = item.price;
+		// }, []);
 
-		if (this.product.variants.length == 0) {
-			min = this.product.sale_price
-				? this.product.sale_price
-				: this.product.price;
-			max = this.product.price;
-		}
+		// if (this.products.variants.length == 0) {
+		// 	min = this.products.sale_price
+		// 		? this.products.sale_price
+		// 		: this.products.price;
+		// 	max = this.products.price;
+		// }
 
-		this.minPrice = min;
-		this.maxPrice = max;
+		// this.minPrice = min;
+		// this.maxPrice = max;
+
+	
 	}
+
+
+	// ratinglist(){
+	// 	this.master.getMethod(`/review/list/${this.product.id}`).subscribe((allreview:any)=>{
+	// 		console.log(allreview)
+	// 		this.getrating=allreview
+	// 		console.log("get-rating",this.getrating.rating)
+	// 	  })
+	// }
+
+	allproduct(){
+		this.apiServices.getSingleProduct(this.product)
+	}
+
+
+
+	// ngOnChange(){
+	// 	console.log(this.product)
+	// }
 
 	addToCart(event: Event) {
 		event.preventDefault();
 		this.cartService.addToCart(this.product);
 	}
 
+	addToWishlist(event) {
+	
+		// console.log(this.products
+		this.apiServices.getSingleProduct(event).subscribe(result => {
+			console.log("hi",result.data[0]);
+			let product = result.data[0];
+			product.stock = result.data[0].variants[0].quantity;
+			this.wishlistService.addToWishList(product);
+		})
+		// this.products.forEach(item => {
+		// 	if(item.id==event){
+		// 		console.log(item)
+		// 	}
+		// });
 
-
-	addToWishlist(event: Event) {
-		event.preventDefault();
-
-		if (this.isInWishlist()) {
-			this.router.navigate(['/shop/wishlist']);
-		} else {
-			this.wishlistService.addToWishList(this.product);
-		}
+		// if (this.isInWishlist()) {
+		// 	this.router.navigate(['/shop/wishlist']);
+		// } else {
+		// 	this.wishlistService.addToWishList(this.products);
+		// }
 	}
+
 
 	addToCompare(event: Event) {
 		event.preventDefault();
@@ -85,9 +141,11 @@ export class ProductElevenComponent implements OnInit {
 		this.compareService.addToCompare(this.product);
 	}
 
-	quickView(event: Event) {
-		event.preventDefault();
-		this.modalService.showQuickView(this.product[0].id);
+	quickView(event:any) {
+		// event.preventDefault(); 
+		// console.log("rohtash",this.products,event);
+		console.log(event)
+		this.modalService.showQuickView(event);
 	}
 
 	isInCompare() {
@@ -97,4 +155,10 @@ export class ProductElevenComponent implements OnInit {
 	isInWishlist() {
 		return this.wishlistService.isInWishlist(this.product);
 	}
+
+
+	// productList(){
+	// 	this.productlist= this.apiServices.fetchShopData
+	// 	console.log(this.productlist)
+	// }
 }

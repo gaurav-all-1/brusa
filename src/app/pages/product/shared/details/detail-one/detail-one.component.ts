@@ -252,6 +252,7 @@ export class DetailOneComponent implements OnInit {
 	buyNowLink(event: Event)
 	{
 		event.preventDefault();
+		console.log(this.variant)
 		if(!this.variant)
 		{
 			this.toastrService.error('Please select a size');

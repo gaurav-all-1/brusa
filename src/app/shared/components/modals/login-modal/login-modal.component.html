@@ -28,7 +28,7 @@
                 
                             </div>
                             <div class="form-group">
-                                <label for="singin-email">Username or email address *</label>
+                                <label for="singin-email">Email address *</label>
                                 <input type="text" class="form-control" id="singin-email" formControlName="email" name="singin-email" required>
                             </div>
                             <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert text-danger upper_box">
@@ -51,7 +51,7 @@
                             <div class="form-footer">
                                 <button type="submit" (click)="onlogin()" class="btn btn-outline-primary-2">
                                     <i [class.fa-refresh]="loader" class="fa fa-refresh fa-spin"></i>
-                                    <span>LOG IN</span>
+                                    <span>Sign in</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </button>
 

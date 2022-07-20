@@ -65,7 +65,7 @@ export class LoginModalComponent implements OnInit {
 				  
 				  this.error=false;
 				  this.message="You are logged in"
-				  this.route.navigate([" "])
+				  this.route.navigate([''])
 
 				// var datacart:any = localStorage.getItem('cartDataOffline')
 				// var varient:any = localStorage.getItem('offlineVarient')
