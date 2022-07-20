@@ -30,6 +30,7 @@ export class QuickViewComponent implements OnInit {
 	token:any=localStorage.getItem("token");
 	product: any;
 	loaded = false;
+	uniquesize = []
 	productImage:any=[]
 	product1:any
 	options = {
@@ -99,7 +100,9 @@ export class QuickViewComponent implements OnInit {
 			console.log("gaurav00000",this.productImage)
 
 
-			
+			const unique = [...new Set(this.product.variants.map(item => item.size))];
+		console.log("unique set",unique)
+		this.uniquesize = unique;
 
 
 			let min = this.minPrice;

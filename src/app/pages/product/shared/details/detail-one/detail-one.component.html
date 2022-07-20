@@ -49,7 +49,7 @@
             <div class="select-custom">
                 <select name="size" id="size" class="form-control" (change)="updateVarient($event)">
                     <option value="" >Select a size</option>
-                    <option  *ngFor="let variant of product.variants;" value="{{variant.size}}">{{variant.size}}</option>     
+                    <option  *ngFor="let variant of uniquesize;" value="{{variant}}">{{variant}}</option>     
                 </select>
             </div>
 

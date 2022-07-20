@@ -11,6 +11,7 @@ import { CompareService } from 'src/app/shared/services/compare.service';
 import { environment } from 'src/environments/environment';
 import { MasterService } from 'src/app/shared/services/master.service';
 import { OfferServiceService } from 'src/app/shared/services/offer-service.service';
+// import { request } from 'http';
 
 declare var $: any;
 
@@ -48,7 +49,7 @@ export class DetailOneComponent implements OnInit {
 	variantValue:boolean=false;
 	newValue:boolean=true;
 	hidden:boolean=false;
-
+	uniquesize = []
 	price:any
 
 	SERVER_URL = environment.SERVER_URL;
@@ -75,9 +76,30 @@ export class DetailOneComponent implements OnInit {
 			// }
 			console.log("inside constructor detail one",this.product)
 			
+			
 	}
 
 	ngOnInit(): void {
+
+		
+
+		// this.product.variants.forEach((variant)=>{
+	    //     if(uniqueValue.indexOf(variant.size)===-1){
+		// 		uniqueValue.push(variant.size);
+		// 	}
+
+			
+		
+		// })
+		const unique = [...new Set(this.product.variants.map(item => item.size))];
+		console.log("unique set",unique)
+		this.uniquesize = unique;
+
+		
+
+		
+
+
 		this.product.variants.forEach((variant)=>{
 			let color = variant.colour;
 			if(!this.colors.includes(color)){
@@ -142,6 +164,8 @@ export class DetailOneComponent implements OnInit {
 		this.amount = this.product.variants[0]['price'];
 
 	}
+
+	
 
 	onhide(){
 		this.modalService.showLoginModal();
@@ -414,7 +438,6 @@ export class DetailOneComponent implements OnInit {
 				this.amount = x.price;
 			}
 		}
-
 	}
 
 	updateColor(color){

@@ -84,7 +84,8 @@ export class SidebarPageComponent implements OnInit {
 					this.totalCount = result.totalPage;
 					console.log(this.totalCount)
 					console.log("product",this.products)
-	
+					// console.log("products-cat",this.products[0]['category']['coverImage'])
+				
 					this.loaded = true;
 					if (!this.firstLoad) {
 						this.firstLoad = true;

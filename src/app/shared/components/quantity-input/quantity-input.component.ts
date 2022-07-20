@@ -30,7 +30,7 @@ export class QuantityInputComponent implements OnInit, OnChanges {
 		if ( this.max <= 0 || this.current >= this.max )
 			{console.log("test cart")
 			return;}
-
+			
 		this.current++;
 		console.log(this.current)
 		this.changeQty.emit( this.current );

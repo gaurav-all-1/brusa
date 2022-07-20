@@ -44,7 +44,6 @@ export class CartService {
 
 	// Product Add to Cart
 	addToCart(product: Product,variant?:number,qty = 1) {
-		this.toastrService.success("product is adding.......")
 		console.log("cart",variant);
 		if(!variant)
 		{

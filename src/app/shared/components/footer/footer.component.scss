@@ -1,3 +1,7 @@
+.footer {
+    padding: 4% 0 4% 0;
+}
+
 .social_icons ul{
     display: inline-flex;
 }
@@ -10,20 +14,100 @@
 .social_icons li i{
     // border: 1px solid;
     padding: 40%;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     border-radius: 50%;
 }
 .footer-2 {
-    background-color: #323232;
+    background-color: #fff;
 }
 ::ng-deep .widget li,h4 {
-    color: #fff !important;
+    color: #000 !important;
 }
 .footer a{
     transition: all 0.5s ease-in-out;
 }
 .footer a:hover {
-    color: #fff;
+    color: #0e2c5e;
     padding-left: 8px;
+}
+.help {
+    width: 50%;
+    margin: 0 auto;
+}
+.set_border {
+    border-right: 1px solid;
+}
+.row_border {
+    border-bottom: 1px solid;
+}
+.set_border1{
+    border-right: 1px solid;
+    height: 90%;
+    text-align: center;
+}
+.concern{
+    padding-top: 19px;
+}
+.connect {
+    text-align: center;
+}
+.set_design {
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 6px;
+    font-size: 23px;
+}
+.social_set {
+    padding-right: 10%;
+}
+li{
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+}
+.return {
+    margin: 0 auto;
+    width: 95%;
+}
+.payment {
+    float: right;
+}
+p{
+    color: #000 !important;
+    font-weight: 500;
+}
+
+h3 {
+    font-weight: 500;
+    color: #000;
+}
+
+@media (max-width:991px) {
+    .set_border1 {
+        border: none !important;
+        height: 100%;
+        text-align: left !important;
+    }
+    .set_border {
+        border: none !important;
+    }
+    .row_border {
+        border: none !important;
+    }
+    .payment {
+        float: none !important;
+    } 
+    .return {
+        margin: 0 auto;
+        width: 100% !important;
+    }
+    .help {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+    .connect {
+        text-align: left !important;
+    }
 }

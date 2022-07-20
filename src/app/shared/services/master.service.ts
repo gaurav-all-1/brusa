@@ -15,7 +15,7 @@ export class MasterService {
   userToken=localStorage.getItem('token');
   // apURL = 'http://18.219.65.148:8081';
   // apURL = 'https://nutribackend.in';
-  apURL = 'http://18.219.65.148:8083';
+  apURL = 'http://3.141.39.9:8083';
 
 
   constructor(private http: HttpClient) { }
