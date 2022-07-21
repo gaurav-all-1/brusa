@@ -5,7 +5,7 @@
         <nav class="side-nav">
             <ul class="menu-vertical sf-arrows" *ngFor="let list of categoryList">
                 <li class="item-lead" routerLinkActive="active">
-                    <a [routerLink]="['shop/sidebar/list/']" [queryParams]="{category: list.id,'page':1}">{{list.name}}</a>
+                    <a [routerLink]="['shop/sidebar/2cols/']" [queryParams]="{category: list.id,'page':1}">{{list.name}}</a>
                 </li>
                 <!-- <li class="item-lead" routerLinkActive="active">
                     <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'gift-idea'}">Gift Ideas</a>

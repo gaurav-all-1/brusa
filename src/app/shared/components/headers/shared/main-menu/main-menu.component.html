@@ -4,7 +4,7 @@
             <a routerLink="/" class="sf-with-ul set-after">Home</a>
         </li>
         <li *ngFor="let list of categoryList" [class.active]="current.includes('/{{list}}')"> 
-            <a [routerLink]="['shop/sidebar/list/']" [queryParams]="{category: list.id,'page':1}" class="sf-with-ul set-after" >{{list.name}}</a>
+            <a [routerLink]="['shop/sidebar/2cols/']" [queryParams]="{category: list.id,'page':1}" class="sf-with-ul set-after" >{{list.name}}</a>
             <div class="megamenu megamenu-md">
                 <div class="row no-gutters"> 
                     <div class="col-md-8">

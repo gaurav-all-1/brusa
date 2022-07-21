@@ -62,7 +62,7 @@
             <label>Color:</label>
             <div class="product-nav product-nav-dots">
                 <div class="color_set" *ngFor="let color of colors">
-                    <input type="radio" name="color" (click)="updateColor(color)" value="{{color}}">{{color}}
+                    <input [disabled]="!size" type="radio" name="color" (click)="updateColor(color)" value="{{color}}">{{color}}
                     <!-- <a [ngStyle]="{'backgroundColor': getcolor}"></a> -->
                 </div>
             </div>

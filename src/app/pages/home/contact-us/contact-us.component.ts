@@ -22,7 +22,7 @@ export class ContactUsComponent implements OnInit {
 			name:new FormControl("" ,[Validators.required,Validators.pattern('^[a-zA-Z_ ]{3,20}$')]),
       email:new FormControl("", [Validators.required,Validators.pattern('^[a-zA-Z]+([.-]?[a-zA-Z0-9]+)*@([a-zA-Z]+([.-]?[a-zA-Z]))[.]{1}[a-zA-Z]{2,}$')]),
 			phone:new FormControl("", [Validators.required,Validators.pattern('[0-9 ]{10}')]), 
-      message:new FormControl("", [Validators.required,Validators.pattern('^[a-zA-Z0-9/.,-_ ]{3,500}$')]), 
+      message:new FormControl("", [Validators.required,Validators.pattern('^[a-zA-Z0-9/.,-_!@#$%^&* ]{3,500}$')]), 
 
 
 			// email:new FormControl("",Validators.required),
@@ -61,6 +61,6 @@ export class ContactUsComponent implements OnInit {
 		  });
 
     // alert(name+email+phone+message)
-      
+
   }
 }

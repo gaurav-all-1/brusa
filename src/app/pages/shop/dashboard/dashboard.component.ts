@@ -58,11 +58,12 @@ export class DashboardComponent implements OnInit {
 
 
 	logOut(){
-		alert("Are you sure");
-		localStorage.removeItem('token');
+		if(confirm("Are You Sure Want to Sign out?")){
+			localStorage.removeItem('token');
 		localStorage.removeItem("userId");
 		this.cartservice.clearCart()
 		location.reload();
+		}
 	   }
 
 	viewTab($event: Event, prevId: number, nextId: number) {

@@ -120,7 +120,7 @@
                         <div class="sale_img">
                             <!-- <img src="assets/images/arrival_3.png" alt=""> -->
                             <div class="arrival-button">
-                                <button class="btn btn-2">New Arrivals</button>
+                                <a [routerLink]="['shop/sidebar/2cols/']" [queryParams]="{category: 1,'page':1}"><button class="btn btn-2">New Arrivals</button></a>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,9 @@
                         <div class="sale_img">
                             <img src="assets/images/arrival_4.png" alt="">
                             <div class="arrival-button">
-                                <button class="btn btn-2">Party Outfit</button>
+                                <!-- <button class="btn btn-2">Party Outfit</button> -->
+                                <a [routerLink]="['shop/sidebar/2cols/']" [queryParams]="{category: 1,'page':1}"><button class="btn btn-2">New Arrivals</button></a>
+
                             </div>
                         </div>
                     </div>
@@ -335,7 +337,7 @@
 
                 <ng-template carouselSlide [id]="data.id">
                    <div class="side-img">
-                       <a [routerLink]="['shop/sidebar/list/']" [queryParams]="{category: data.id,'page':1}"><img src="{{data.image}}" alt=""></a>
+                       <a [routerLink]="['shop/sidebar/2cols/']" [queryParams]="{category: data.id,'page':1}"><img src="{{data.image}}" alt=""></a>
                        <span>{{data.name}}</span>
                    </div>
                 </ng-template>  

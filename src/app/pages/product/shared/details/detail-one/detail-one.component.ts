@@ -252,11 +252,12 @@ export class DetailOneComponent implements OnInit {
 	buyNowLink(event: Event)
 	{
 		event.preventDefault();
-		console.log(this.variant)
+		
 		if(!this.variant)
 		{
-			this.toastrService.error('Please select a size');
-		}else{
+			this.toastrService.error('Please Select a Size or Colour');
+		}
+		else{
 			this.router.navigate([`/shop/productcheckout/${this.product.id}`],{
 				queryParams: { "varient": this.variant },
 				queryParamsHandling: 'merge' })

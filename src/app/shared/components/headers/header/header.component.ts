@@ -28,11 +28,12 @@ export class HeaderComponent implements OnInit {
 	}
 
 	onlogout(){
-		alert("Are you sure");
-		localStorage.removeItem('token');
+		if(confirm("Are you sure want to logout?")){
+			localStorage.removeItem('token');
 		localStorage.removeItem("userId");
 		this.cartservice.clearCart()
 		location.reload();
+		}
 	}
 
 	UserLogin(){
