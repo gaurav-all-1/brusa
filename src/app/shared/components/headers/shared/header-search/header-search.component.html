@@ -15,7 +15,7 @@
 
         <div class="live-search-list" *ngIf="searchTerm.length > 2">
             <div class="autocomplete-suggestions" *ngIf="suggestions.length > 0" (click)="goProductPage()">
-                <a [routerLink]="'/product/BlackBrusaProducts/' + product.id" class="autocomplete-suggestion"
+                <a [routerLink]="'/product/NutrivillageProducts/' + product.id" class="autocomplete-suggestion"
                     *ngFor="let product of suggestions">
                     <figure class="mb-0 mr-3" style="width: 40px; height: 40px;">
                         <molla-image [src]="product['image']" width="40" height="40" alt="Product"

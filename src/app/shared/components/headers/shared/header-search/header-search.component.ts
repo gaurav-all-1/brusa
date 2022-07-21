@@ -74,23 +74,23 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
 	onSearchToggle(e: Event) {
 		e.stopPropagation();
 		document
-			.querySelector('.header .search-toggle')
+			.querySelector('.search-toggle')
 			.classList.toggle('active');
 		document
-			.querySelector('.header .header-search-wrapper')
+			.querySelector('.header-search-wrapper')
 			.classList.toggle('show');
 	}
 
 	showSearchForm(e: Event) {
 		document
-			.querySelector('.header .header-search')
+			.querySelector('.header-search')
 			.classList.add('show');
 		e.stopPropagation();
 	}
 
 	closeSearchForm() {
 		document
-			.querySelector('.header .header-search')
+			.querySelector('.header-search')
 			.classList.remove('show');
 	}
 
