@@ -11,10 +11,16 @@
     margin-top: 0 !important;
 }
 ::ng-deep .header-bottom .menu .megamenu.megamenu-md {
-    overflow: scroll !important;
-    height: 400px !important;
-    overflow-x: hidden !important;
+    overflow: scroll!important;
+    height: 240px !important;
+    width: 200px !important;
+    overflow-x: hidden!important;
+    box-shadow: 0px 5px 6px -2px #0e2b5ec3;
+    
 }
+::ng-deep .header-bottom .menu .megamenu.megamenu-md::-webkit-scrollbar {
+    width: 10px;
+  }
 // .menu .menu-col {
 //     background: #0e2c5e !important;
 // }
@@ -22,9 +28,14 @@
 //     background: #0e2c5e !important;
 // }
 ::ng-deep .menu .megamenu li a {
-    // color: #fff !important;
-    font-weight: 500 !important;
-    font-size: 1.6rem;
+    font-weight: 400;
+    font-size: 14px;
+    color: #0e2b5ec3;
+    transition: all 0.3s ease-in-out;
+}
+::ng-deep .menu .megamenu li a:hover{
+    padding-left: 6px;
+    font-weight: 500;
 }
 .menu .megamenu div>ul {
     min-width: 215px !important;
