@@ -52,6 +52,16 @@
 .connect {
     text-align: center;
 }
+.connect ul li{
+    display: inline-block;
+}
+.connect ul li{
+    padding-right: 5px;
+}
+.connect ul li a:hover{
+    padding-left: 0;
+    transform: scale(1.1);
+}
 .set_design {
     border: 1px solid;
     border-radius: 50px;
@@ -110,4 +120,21 @@ h3 {
     .connect {
         text-align: left !important;
     }
+}
+
+
+
+.ul-left{
+    text-align: left;
+    padding-left: 6rem;
+}
+.connect h1,
+.help h1,
+.set_border h1{
+    font-size: 1.9rem!important;
+    color: #0e2b5ec3;
+    font-weight: 500;
+}
+.concern h1{
+    font-size: 2rem !important;
 }
