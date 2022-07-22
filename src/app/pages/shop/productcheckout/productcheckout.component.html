@@ -31,11 +31,11 @@
                                     <label>First Name *</label>
                                     <input type="text" class="form-control" formControlName="firstName" name="firstName" required [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
                                     <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                        <div *ngIf="f.firstName.errors.required">first name is required</div>
+                                        <div *ngIf="f.firstName.errors.required">First Name is Required</div>
                                       </div>
                                       <div *ngIf="(userForm.controls.firstName.invalid &&  userForm.controls.firstName.touched) || userForm.controls.firstName.dirty">
-                                        <small *ngIf="userForm.controls.firstName.errors?.required" class="text-danger">First name is required</small>
-                                        <small *ngIf="userForm.controls.firstName.errors?.pattern" class="text-danger">Please provide a valid first name</small>
+                                        <small *ngIf="userForm.controls.firstName.errors?.required" class="text-danger">First Name is Required</small>
+                                        <small *ngIf="userForm.controls.firstName.errors?.pattern" class="text-danger">Please Provide a Valid First Name</small>
                                       </div>
                                 </div>
 
@@ -43,12 +43,12 @@
                                     <label>Last Name *</label>
                                     <input type="text" class="form-control" formControlName="lastName" name="lastName" required [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
                                     <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                                        <div *ngIf="f.lastName.errors.required">last name is required</div>
+                                        <div *ngIf="f.lastName.errors.required">Last Name is Required</div>
                                       </div>
 
                                       <div *ngIf="(userForm.controls.lastName.invalid &&  userForm.controls.lastName.touched) || userForm.controls.lastName.dirty">
-                                        <small *ngIf="userForm.controls.lastName.errors?.required" class="text-danger">last name is required</small>
-                                        <small *ngIf="userForm.controls.lastName.errors?.pattern" class="text-danger">Please provide a valid last name</small>
+                                        <small *ngIf="userForm.controls.lastName.errors?.required" class="text-danger">Last Name is Required</small>
+                                        <small *ngIf="userForm.controls.lastName.errors?.pattern" class="text-danger">Please Provide a Valid Last Name</small>
                                       </div>
                                 </div>
                             </div>
@@ -59,20 +59,20 @@
                             <label>Country *</label>
                             <input type="text" class="form-control" formControlName="country" name="country" required [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
                             <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
-                                <div *ngIf="f.country.errors.required">country name is required</div>
+                                <div *ngIf="f.country.errors.required">Country Name is Required</div>
                               </div>
                               <div *ngIf="(userForm.controls.country.invalid &&  userForm.controls.country.touched) || userForm.controls.country.dirty">
-                                <small *ngIf="userForm.controls.country.errors?.required" class="text-danger">Country name is required</small>
-                                <small *ngIf="userForm.controls.country.errors?.pattern" class="text-danger">Please provide a valid country name</small>
+                                <small *ngIf="userForm.controls.country.errors?.required" class="text-danger">Country Name is Required</small>
+                                <small *ngIf="userForm.controls.country.errors?.pattern" class="text-danger">Please Provide a Valid Country Name</small>
                               </div>
-                            <label>Street address *</label>
-                            <input type="text" class="form-control" name="street1" formControlName="address" placeholder="House number and Street name" required [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                            <label>Street Address *</label>
+                            <input type="text" class="form-control" name="street1" formControlName="address" placeholder="House Number And Street Name" required [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
                             <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-                                <div *ngIf="f.address.errors.required">street name is required</div>
+                                <div *ngIf="f.address.errors.required">Street Name is Required</div>
                               </div>
                               <div *ngIf="(userForm.controls.address.invalid &&  userForm.controls.address.touched) || userForm.controls.address.dirty">
-                                <small *ngIf="userForm.controls.address.errors?.required" class="text-danger">Address is required</small>
-                                <small *ngIf="userForm.controls.address.errors?.pattern" class="text-danger">Please provide a valid Address</small>
+                                <small *ngIf="userForm.controls.address.errors?.required" class="text-danger">Address is Required</small>
+                                <small *ngIf="userForm.controls.address.errors?.pattern" class="text-danger">Please Provide a Valid Address</small>
                               </div>
                             <!-- <input type="text" class="form-control" name="street2" placeholder="Appartments, suite, unit etc ..."
                                 required> -->
@@ -82,7 +82,7 @@
                                     <label>Town / City *</label>
                                     <input type="text" name="city" formControlName="city" class="form-control" required [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
                                     <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                                        <div *ngIf="f.city.errors.required">city name is required</div>
+                                        <div *ngIf="f.city.errors.required">City Name is Required</div>
                                       </div>
                                 </div>
 
@@ -139,11 +139,11 @@
                                     <input type="text" name="postcode" formControlName="pinNumber" class="form-control" required [ngClass]="{ 'is-invalid': submitted && f.pinNumber.errors }">
                                     
                                     <div *ngIf="submitted && f.pinNumber.errors" class="invalid-feedback">
-                                        <div *ngIf="f.pinNumber.errors.required">pincode is required</div>
+                                        <div *ngIf="f.pinNumber.errors.required">Pincode is Required</div>
                                       </div>
                                       <div *ngIf="(userForm.controls.pinNumber.invalid &&  userForm.controls.pinNumber.touched) || userForm.controls.pinNumber.dirty">
-                                        <small *ngIf="userForm.controls.pinNumber.errors?.required" class="text-danger">Pincode is required</small>
-                                        <small *ngIf="userForm.controls.pinNumber.errors?.pattern" class="text-danger">Please provide a valid Pin number</small>
+                                        <small *ngIf="userForm.controls.pinNumber.errors?.required" class="text-danger">Pincode is Required</small>
+                                        <small *ngIf="userForm.controls.pinNumber.errors?.pattern" class="text-danger">Please Provide a Valid Pin Number</small>
                                       </div>
                                 </div>
 
@@ -151,26 +151,26 @@
                                     <label>Phone *</label>
                                     <input type="tel" name="tel" formControlName="Phone" class="form-control" required [ngClass]="{ 'is-invalid': submitted && f.Phone.errors }">
                                     <div *ngIf="submitted && f.Phone.errors" class="invalid-feedback">
-                                        <div *ngIf="f.Phone.errors.required">phone no is required</div>
+                                        <div *ngIf="f.Phone.errors.required">Phone No is Required</div>
                                       </div>
                                       <div *ngIf="(userForm.controls.Phone.invalid &&  userForm.controls.Phone.touched) || userForm.controls.Phone.dirty">
-                                        <small *ngIf="userForm.controls.Phone.errors?.required" class="text-danger">Phone is required</small>
-                                        <small *ngIf="userForm.controls.Phone.errors?.pattern" class="text-danger">Please provide a valid Phone number</small>
+                                        <small *ngIf="userForm.controls.Phone.errors?.required" class="text-danger">Phone is Required</small>
+                                        <small *ngIf="userForm.controls.Phone.errors?.pattern" class="text-danger">Please Provide a Valid Phone Number</small>
                                       </div>
                                 </div>
                             </div>
 
-                            <label>Email address *</label>
+                            <label>Email Address *</label>
                             <input type="email" name="email" formControlName="Email" class="form-control" required [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
                             <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
-                                <div *ngIf="f.Email.errors.required">email is required</div>
+                                <div *ngIf="f.Email.errors.required">Email is Required</div>
                               </div>
                                <!-- <div *ngIf="userForm.control['Email'].error?.pattern">
                                   <small> please enter Valid email.</small>
                                </div>  -->
                                <div *ngIf="(userForm.controls.Email.invalid &&  userForm.controls.Email.touched) || userForm.controls.Email.dirty">
-                                <small *ngIf="userForm.controls.Email.errors?.required" class="text-danger">email is required</small>
-                                <small *ngIf="userForm.controls.Email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+                                <small *ngIf="userForm.controls.Email.errors?.required" class="text-danger">Email is Required</small>
+                                <small *ngIf="userForm.controls.Email.errors?.pattern" class="text-danger">Please Provide a Valid Email Address</small>
                               </div>
 
 
