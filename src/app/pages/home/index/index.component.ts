@@ -93,7 +93,7 @@ export class IndexComponent implements OnInit {
 				user_id: 'user_mTjMBBP092bpZsnZTyLfp',
 				template_params: {
 					// 'company': 'Black Brusa',
-					'to_mail': 'gaurav.singhal@flybunch.com',
+					'to_mail': 'princeantil2608@gmail.com',
 					'user_email': email
 				}
 			  };	

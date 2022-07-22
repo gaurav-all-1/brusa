@@ -57,7 +57,11 @@
                             <input type="text" class="form-control" name="company"> -->
 
                             <label>Country *</label>
-                            <input type="text" class="form-control" formControlName="country" name="country" required [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                            <!-- <input type="text" class="form-control" formControlName="country" name="country" required [ngClass]="{ 'is-invalid': submitted && f.country.errors }"> -->
+                                <select name="country" id="country" formControlName="country" class="form-control">
+                                    <option value="India">India</option>
+                                </select>
+                           
                             <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
                                 <div *ngIf="f.country.errors.required">country name is required</div>
                               </div>

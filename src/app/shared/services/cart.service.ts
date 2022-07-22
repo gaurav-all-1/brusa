@@ -47,7 +47,7 @@ export class CartService {
 		console.log("cart",variant);
 		if(!variant)
 		{
-			this.toastrService.error('Please select a size');
+			this.toastrService.error('Please select a size or colour');
 		}else{
 			// if (this.canAddToCart(product, qty)) {
 		let cartDataItems = localStorage.getItem('cartDataItems');
@@ -137,7 +137,7 @@ export class CartService {
 		console.log("cart",variant);
 		if(!variant)
 		{
-			this.toastrService.error('Please select a size');
+			this.toastrService.error('Please select a size or colour');
 		}else{
 			// if (this.canAddToCart(product, qty)) {
 		let cartDataItems = localStorage.getItem('cartDataItems');

@@ -248,7 +248,7 @@
               <div class="row">
                 <div class="col-lg-12">
                     <div class="upto_All">
-                       <h6>Up To 60% Off On All</h6>
+                       <h6>Up To {{this.getoffer[2].amount}}% Off On {{this.getoffer[2].product.name | titlecase}}</h6>
                     </div>
                     
                 </div>
@@ -266,8 +266,8 @@
           <div class="col-lg-3 col-md-12 col-12 check">
               <div class="check_child_1">
                   <div class="check_child_2 main-sale-section">
-                    <img src="../../../../assets/images/onsale.png" alt="">
-                    <button class="btn shop-btn mt-3">Shop Now</button>
+                    <img src="{{this.getoffer[2].product.image}}" alt="">
+                    <button class="btn shop-btn mt-3"><a [routerLink]="['/product/BlackBrusaProducts/',getoffer[2].product.id]">Shop Now</a></button>
                   </div>
               </div>
           </div>
