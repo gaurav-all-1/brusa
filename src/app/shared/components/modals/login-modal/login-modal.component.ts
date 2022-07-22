@@ -43,11 +43,11 @@ export class LoginModalComponent implements OnInit {
 			var password=this.loginForm.get("password").value;
 			if(email==""||email==undefined){
 			  this.error=true;
-			  this.message="Please enter your email id"
+			  this.message="Please Enter Your Email ID"
 			  
 			}else if (password==""|| password==undefined){
 			  this.error=true;
-			  this.message="Please enter your password";
+			  this.message="Please Enter Your Password";
 			
 			}else{
 			  const data={
@@ -64,7 +64,7 @@ export class LoginModalComponent implements OnInit {
 				  localStorage.setItem("userId", data.id);
 				  
 				  this.error=false;
-				  this.message="You are logged in"
+				  this.message="You are Logged in"
 				  this.route.navigate([''])
 
 				// var datacart:any = localStorage.getItem('cartDataOffline')
@@ -77,7 +77,7 @@ export class LoginModalComponent implements OnInit {
 
 				}else{
 				  this.error=false;
-				  this.message="Something wrong please check your details"
+				  this.message="Something Wrong Please Check Your Details"
 				  this.loader = false;
 				}
 				
@@ -103,17 +103,17 @@ export class LoginModalComponent implements OnInit {
 		if (email=="" || email==undefined || email==null){
 			this.loader = false;
 		  this.error1=true
-		  this.message1="Please enter the email ID"
+		  this.message1="Please Enter the Email ID"
 		  
 		}else if  (password==""|| password==undefined || password==null){
 			this.loader = false;
 		  this.error1=true;
-		  this.message1="Please enter your password"
+		  this.message1="Please Enter Your Password"
 		}
 		else if  (confirmpassword==""|| confirmpassword==undefined || confirmpassword==null){
 			this.loader = false;
 			this.error1=true;
-			this.message1="Please enter your password"
+			this.message1="Please Enter Your Password"
 		  }else{
 			  if(confirmpassword==password){
 				const data={
@@ -136,7 +136,7 @@ export class LoginModalComponent implements OnInit {
 					this.loader = false;
 
 					 this.error1=true
-					 this.message1="Something wrong please try again"
+					 this.message1="Something Wrong Please Try Again"
 
 				   }
 
@@ -154,7 +154,7 @@ export class LoginModalComponent implements OnInit {
 		}else{
 					this.loader = false;
 					this.error1=true
-					 this.message1="Something wrong please try again"
+					 this.message1="Something Wrong Please Try Again"
 		}
 		
 	   

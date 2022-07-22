@@ -84,7 +84,7 @@ export class IndexComponent implements OnInit {
 		var email = this.emailForm.get("email").value;
 		// alert(email)
 		if(email=="" || email==null){
-			this.toaster.error("please enter the email");
+			this.toaster.error("Please Enter The Email");
 			return false
 		}else{
 			var data = {
@@ -105,7 +105,7 @@ export class IndexComponent implements OnInit {
 			  }, err=>{
 				// this.loader = false;
 
-				 this.toaster.success("Subscribed successfully!")
+				 this.toaster.success("Subscribed Successfully!")
 				 this.emailForm.reset()
 			  });
 			  return true
