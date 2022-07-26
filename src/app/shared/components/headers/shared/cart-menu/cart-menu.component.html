@@ -10,7 +10,7 @@
 
     <div class="dropdown-menu dropdown-menu-right"
         [ngClass]="{'text-center': totalQuantity == 0}">
-        <p *ngIf="totalQuantity == 0 else elseBlock">No products in the cart.</p>
+        <p *ngIf="totalQuantity == 0 else elseBlock">No Products In The Cart.</p>
 
         <ng-template #elseBlock>
             <div class="dropdown-cart-products">
