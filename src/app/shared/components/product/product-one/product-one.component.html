@@ -15,16 +15,16 @@
         <div class="product-action" *ngIf="product.stock && product.stock !== 0">
             <a [routerLink]="['/product/default/'+ product.slug]" class="btn-product btn-cart btn-select"
                 *ngIf="product.variants.length > 0 else cartBlock">
-                <span>select options</span>
+                <span>Select Options</span>
             </a>
             <ng-template #cartBlock>
                 <button class="btn-product btn-cart" (click)="addToCart($event)">
-                    <span>add to cart</span>
+                    <span>Add to Cart</span>
                 </button>
             </ng-template>
 
             <button class="btn-product btn-quickview" title="Quick view" (click)="quickView($event)">
-                <span>quick view</span>
+                <span>Quick View</span>
             </button>
         </div>
     </figure>
