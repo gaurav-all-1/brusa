@@ -95,7 +95,9 @@ export class ProductcheckoutComponent implements OnInit {
         firstName:['', [Validators.required,Validators.pattern('^[a-zA-Z]{3,20}$')]],
         lastName:['', [Validators.required,Validators.pattern('^[a-zA-Z]{3,20}$')]],
         country:['', [Validators.required,Validators.pattern('^[a-zA-Z]{3,20}$')]],
-        address:['', [Validators.required,Validators.pattern('^[a-zA-Z0-9_ ]{3,20}$')]],
+        // address:['', [Validators.required,Validators.pattern('^[a-zA-Z0-9_ ]{3,20}$')]],
+		address:['', [Validators.required,Validators.pattern('^[a-zA-Z0-9/,.*-_ ]{3,200}$')]],
+ 
         city:['', Validators.required],
         state:['', Validators.required],
         pinNumber:['', [Validators.required,Validators.pattern('[0-9 ]{6}')]],
