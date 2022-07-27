@@ -26,7 +26,7 @@
                 <table class="table table-wishlist table-mobile">
                     <thead>
                         <tr>
-                            <th>Product</th>
+                            <th class="product-padd">Product</th>
                             <th>Price</th>
                             <th>Stock Status</th>
                             <th></th>
@@ -81,8 +81,8 @@
                             
                             </td>
                             <td class="stock-col">
-                                <span class="in-stock" *ngIf="data.stock > 0">In stock</span>
-                                <span class="out-of-stock" *ngIf="data.stock < 1">Out of stock</span>
+                                <span class="in-stock" *ngIf="data.stock > 0">In Stock</span>
+                                <span class="out-of-stock" *ngIf="data.stock < 1">Out of Stock</span>
                             </td>
                             <td class="action-col">
                                 <button class="btn btn-block btn-outline-primary-2" *ngIf="data.stock > 0"

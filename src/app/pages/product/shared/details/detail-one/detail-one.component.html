@@ -86,7 +86,7 @@
     <div class="product-details-action">
         <a  href="javascript:;" class="btn-product btn-cart"
             [class.btn-disabled]="!( product.variants.length > 0 )"
-            (click)="addCart( $event, 0 )"><span>add to cart</span></a>
+            (click)="addCart( $event, 0 )"><span>Add to Cart</span></a>
 
         
 
@@ -141,7 +141,7 @@
         </div>
 
         <div *ngIf="product.stock < 1" class="stock">
-        <span class="out-of-stock">Out of stock</span>
+        <span class="out-of-stock">Out of Stock</span>
         </div>
     
     <div class="sticky-bar d-none">
@@ -201,7 +201,7 @@
                         <div class="details-action-wrapper ml-0">
                             <a href="javascript:;" class="btn-product btn-wishlist"
                                 [class.added-to-wishlist]="isInWishlist()" (click)="addToWishlist($event)">
-                                <span>{{ isInWishlist() ? 'go' : 'add' }} to wishlist</span>
+                                <span>{{ isInWishlist() ? 'go' : 'Add' }} to Wishlist</span>
                             </a>
                         </div>
                     </div>

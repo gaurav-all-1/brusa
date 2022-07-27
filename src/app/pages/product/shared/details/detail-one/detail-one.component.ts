@@ -255,7 +255,7 @@ export class DetailOneComponent implements OnInit {
 		console.log(this.variant)
 		if(!this.variant)
 		{
-			this.toastrService.error('Please select a size');
+			this.toastrService.error('Please Select a Size');
 		}else{
 			this.router.navigate([`/shop/productcheckout/${this.product.id}`],{
 				queryParams: { "varient": this.variant },
@@ -443,7 +443,7 @@ export class DetailOneComponent implements OnInit {
 
 	updateColor(color){
 		if(!color || !this.size){
-			this.toastrService.error("please select size or color")
+			this.toastrService.error("Please Select Size or Color")
 			return
 		}
 		this.product.variants.forEach((element) => {

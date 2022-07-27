@@ -152,7 +152,7 @@ export class ProductcheckoutComponent implements OnInit {
 				  console.log(res, res.msg=="make payment");
 				  this.loader = false;
 				  if(!res.status){
-					alert("something Wrong check once again")
+					alert("something Wrong Check Once Again")
 				  }
 				  if( res.msg=="make payment"){
 					  console.log("hi");
@@ -248,7 +248,7 @@ export class ProductcheckoutComponent implements OnInit {
 			//   alert( res['response'].guestToken)
 			  this.loader = false;
 			  if(!res.status){
-				alert("something Wrong check once again")
+				alert("something Wrong Check Once Again")
 			  }
 			  if( res.msg=="make payment"){
 				  console.log("hi");
