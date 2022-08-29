@@ -12,7 +12,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { DefaultPageComponent } from './default/default.component';
 // import { CenteredPageComponent } from './centered/centered.component';
 // import { ExtendedPageComponent } from './extended/extended.component';
-// import { GalleryPageComponent } from './gallery/gallery.component';
+import { GalleryPageComponent } from './gallery/gallery.component';
 // import { StickyInfoPageComponent } from './sticky-info/sticky-info.component';
 // import { SidebarPageComponent } from './sidebar/sidebar.component';
 // import { FullWidthPageComponent } from './fullwidth/fullwidth.component';
@@ -42,7 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		DefaultPageComponent,
 		// CenteredPageComponent,
 		// ExtendedPageComponent,
-		// GalleryPageComponent,
+		GalleryPageComponent,
 		// StickyInfoPageComponent,
 		// SidebarPageComponent,
 		// FullWidthPageComponent,

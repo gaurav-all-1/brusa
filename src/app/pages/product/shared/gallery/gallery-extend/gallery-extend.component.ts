@@ -14,6 +14,16 @@ import { sliderOpt } from 'src/app/shared/data';
 
 export class GalleryExtendComponent implements OnInit {
 
+	currentIndex = 0;
+	album = []; 
+	lightBoxOption = {
+		showImageNumberLabel: true,
+		centerVertically: true,
+		showZoom: true,
+		fadeDuration: .2,
+		albumLabel: "%1 / %2"
+	}
+
 	@Input() product: Product;
 	@Input() loaded = false;
 
@@ -42,5 +52,16 @@ export class GalleryExtendComponent implements OnInit {
 	constructor( public lightBox: Lightbox ) { }
 
 	ngOnInit (): void {
+
+		
+	}
+
+	openLightBox() {
+		this.lightBox.open(this.album, this.currentIndex, this.lightBoxOption);
+	}
+
+	changeImage($event: Event, index = 0) {
+		this.currentIndex = index;
+		$event.preventDefault();
 	}
 }

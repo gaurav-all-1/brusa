@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Product } from 'src/app/shared/classes/product';
@@ -7,6 +7,10 @@ import { CartService } from 'src/app/shared/services/cart.service';
 import { WishlistService } from 'src/app/shared/services/wishlist.service';
 import { CompareService } from 'src/app/shared/services/compare.service';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
+import { ModalService } from 'src/app/shared/services/modal.service';
+import { MasterService } from 'src/app/shared/services/master.service';
+import { OfferServiceService } from 'src/app/shared/services/offer-service.service';
 
 declare var $: any;
 
@@ -17,8 +21,12 @@ declare var $: any;
 })
 
 export class DetailThreeComponent implements OnInit {
-	@Input() product: Product;
-
+	getvarientId:any
+	getoffer:any
+	token:any=localStorage.getItem("token");
+	@Input() product: any;
+	variants = [];
+	liveurl:any
 	variationGroup = [];
 	selectableGroup = [];
 	sizeArray = [];
@@ -29,72 +37,243 @@ export class DetailThreeComponent implements OnInit {
 		price: null,
 		size: ""
 	};
+	size=""
+	colors = []
+
+	availableColors = [];
 	maxPrice = 0;
 	minPrice = 99999;
+	ForDisable:boolean
+	// getcolor="red";
 	qty = 1;
+	variantValue:boolean=false;
+	newValue:boolean=true;
+	hidden:boolean=false;
+	uniquesize = []
+	price:any
 
 	SERVER_URL = environment.SERVER_URL;
+	variant: any=null;
+
+	amount:number=0
 
 	constructor(
 		public cartService: CartService,
 		public wishlistService: WishlistService,
 		public compareService: CompareService,
 		public router: Router,
-		public el: ElementRef) {
+		public el: ElementRef,
+		private toastrService: ToastrService,
+		private modalService:ModalService,
+		private master:MasterService,
+		private offerservice:OfferServiceService) {
+
+
+			// let cartDataItems = localStorage.getItem('cartDataItems');
+			// console.log("ssssssse*****",cartDataItems)
+			// if(cartDataItems.length){
+			// 	this.variantValue=true;
+			// }
+			console.log("inside constructor detail one",this.product)
+			
+			
 	}
 
 	ngOnInit(): void {
-		let min = this.minPrice;
-		let max = this.maxPrice;
-		this.variationGroup = this.product.variants.reduce((acc, cur) => {
-			cur.size.map(item => {
-				acc.push({
-					color: cur.color,
-					colorName: cur.color_name,
-					size: item.name,
-					price: cur.price
-				});
-			});
-			if (min > cur.price) min = cur.price;
-			if (max < cur.price) max = cur.price;
-			return acc;
-		}, []);
 
-		if (this.product.variants.length == 0) {
-			min = this.product.sale_price
-				? this.product.sale_price
-				: this.product.price;
-			max = this.product.price;
-		}
+		
 
-		this.minPrice = min;
-		this.maxPrice = max;
+		// this.product.variants.forEach((variant)=>{
+	    //     if(uniqueValue.indexOf(variant.size)===-1){
+		// 		uniqueValue.push(variant.size);
+		// 	}
 
-		this.refreshSelectableGroup();
+			
+		
+		// })
+		const unique = [...new Set(this.product.variants.map(item => item.size))];
+		console.log("unique set",unique)
+		this.uniquesize = unique;
+
+		
+
+		
+
+
+		this.product.variants.forEach((variant)=>{
+			let color = variant.colour;
+			if(!this.colors.includes(color)){
+				this.colors.push(color)
+			}
+		})
+
+		
+		console.log("color",this.colors)
+
+
+		// if(this.token){
+		// 	this.hidden = true
+		// }else{
+		// this.modalService.showLoginModal();
+		// }
+
+		
+		this.offerservice.setqty(this.qty)
+	
+
+
+
+		 
+		this.liveurl = location.href
+		console.log("urlset",this.liveurl)
+
+		// let min = this.minPrice;
+		// let max = this.maxPrice;
+		// this.variationGroup = this.product.variants.reduce((acc, cur) => {
+		// 	cur.size.map(item => {
+		// 		acc.push({
+		// 			color: cur.color,
+		// 			colorName: cur.color_name,
+		// 			size: item.name,
+		// 			price: cur.price
+		// 		});
+		// 	});
+		// 	if (min > cur.price) min = cur.price;
+		// 	if (max < cur.price) max = cur.price;
+		// 	return acc;
+		// }, []);
+
+		// if (this.product.variants.length == 0) {
+		// 	min = this.product.sale_price
+		// 		? this.product.sale_price
+		// 		: this.product.price;
+		// 	max = this.product.price;
+		// }
+
+		// this.minPrice = min;
+		// this.maxPrice = max;
+
+		// this.refreshSelectableGroup();
+
+		console.log("&&&&&");
+		console.log(this.product.category.id);
+		Object.keys(this.product['variants']).forEach((v)=>{
+			console.log(JSON.stringify(this.product['variants'][v]));
+			this.variants.push(this.product['variants'][v]);
+		});
+		console.log(this.variants);
+		this.amount = this.product.variants[0]['price'];
+
 	}
 
-	addCart(event: Event) {
+	
+
+	onhide(){
+		this.modalService.showLoginModal();
+	}
+
+	// onhide(){
+	// 	if(!this.token){
+	// 	this.modalService.showLoginModal();
+	// 	}else{
+	// 		this.router.navigateByUrl('/');
+	// 	}
+	// }
+
+	offerList(){
+		this.master.getMethod('/offer/list').subscribe(res=>{
+			// console.log("offerslist",res);
+			this.getoffer = res
+			console.log("offerlist",this.getoffer)
+			this.offerservice.setofferList(res);
+		})
+	}
+	
+	@HostListener('window:scroll', ['$event'])
+	handleScroll(event: Event) {
+		if (document.querySelector('.default-page')) {
+			this.scrollHandler()
+		}
+	}
+										
+	addCart(event: Event, index = 0) {
+		
 		event.preventDefault();
-		if ((event.currentTarget as HTMLElement).classList.contains('btn-disabled')) return;
+		if(this.token){
+			if ((event.currentTarget as HTMLElement).classList.contains('btn-disabled')) return;
 
-		let newProduct = { ...this.product };
-		if (this.product.variants.length > 0) {
-			newProduct = {
-				...this.product,
-				name:
-					this.product.name +
-					' - ' +
-					this.selectedVariant.colorName +
-					', ' +
-					this.selectedVariant.size,
-				price: this.selectedVariant.price
-			};
+			let newProduct = { ...this.product };
+			console.log('crt',newProduct);
+			if (this.product.variants.length > 0) {
+				newProduct = {
+					...this.product,
+					name:
+						this.product.name ,
+					price: this.amount
+				};
+				// newProduct.variants.id = this.product.
+			}
+			console.log(newProduct);
+			console.log("my hi variant",this.variant);
+			this.cartService.addToCart(newProduct,this.variant,index == 0 ? this.qty : this.product.qty);
+			// this.variantValue=true
+		}else {
+
+
+		this.modalService.showLoginModal();
+			
+			
+			// let newProduct = { ...this.product };
+			// console.log('crt',newProduct);
+			// if (this.product.variants.length > 0) {
+			// 	newProduct = {
+			// 		...this.product,
+			// 		name:
+			// 			this.product.name ,
+			// 		price: this.product.variants[0].price
+			// 	};
+			// 	// newProduct.variants.id = this.product.
+			// }
+			// console.log(newProduct);
+
+			// localStorage.setItem('cartDataOffline',JSON.stringify(newProduct))
+			// localStorage.setItem('offlineVarient',this.variant)
+			// localStorage.setItem('offlineQuantity',index == 0 ? this.qty : this.product.qty)
+		}
+	
+		
+		// this.getvarientId = this.variant
+		// console.log("ifofvarient",this.getvarientId)
+		// if(!this.getvarientId){
+		// 	this.toastrService.error('Please select the size');
+		// }
+
+	}
+
+	buyNowLink(event: Event)
+	{
+		event.preventDefault();
+		if(!this.variant)
+		{
+			this.toastrService.error('Please select a size');
+		}else{
+			this.router.navigate([`/shop/productcheckout/${this.product.id}`],{
+				queryParams: { "varient": this.variant },
+				queryParamsHandling: 'merge' })
+			// this.router.navigate(['/shop/productcheckout/'],{queryParams: {productid:this.product.id,varientid:this.variant}});
+			
 		}
 
-		this.cartService.addToCart(
-			newProduct, this.qty
-		);
 	}
+
+
+
+
+
+	// showLoginModal(event: Event): void {
+	// 	event.preventDefault();
+	// 	this.modalService.showLoginModal();
+	// }
 
 	addToWishlist(event: Event) {
 		event.preventDefault();
@@ -119,6 +298,7 @@ export class DetailThreeComponent implements OnInit {
 	isInWishlist() {
 		return this.wishlistService.isInWishlist(this.product);
 	}
+	
 
 	refreshSelectableGroup() {
 		let tempArray = [...this.variationGroup];
@@ -147,30 +327,30 @@ export class DetailThreeComponent implements OnInit {
 			}, []);
 		}
 
-		this.colorArray = this.product.variants.reduce((acc, cur) => {
-			if (
-				tempArray.findIndex(item => item.color == cur.color) == -1
-			) {
-				return [
-					...acc,
-					{
-						color: cur.color,
-						colorName: cur.color_name,
-						price: cur.price,
-						disabled: true
-					}
-				];
-			}
-			return [
-				...acc,
-				{
-					color: cur.color,
-					colorName: cur.color_name,
-					price: cur.price,
-					disabled: false
-				}
-			];
-		}, []);
+		// this.colorArray = this.product.variants.reduce((acc, cur) => {
+		// 	if (
+		// 		tempArray.findIndex(item => item.color == cur.color) == -1
+		// 	) {
+		// 		return [
+		// 			...acc,
+		// 			{
+		// 				color: cur.color,
+		// 				colorName: cur.color_name,
+		// 				price: cur.price,
+		// 				disabled: true
+		// 			}
+		// 		];
+		// 	}
+		// 	return [
+		// 		...acc,
+		// 		{
+		// 			color: cur.color,
+		// 			colorName: cur.color_name,
+		// 			price: cur.price,
+		// 			disabled: false
+		// 		}
+		// 	];
+		// }, []);
 
 		let toggle = this.el.nativeElement.querySelector('.variation-price');
 		if (toggle) {
@@ -211,12 +391,18 @@ export class DetailThreeComponent implements OnInit {
 			this.selectedVariant = { ...this.selectedVariant, size: "" };
 		} else {
 			this.selectedVariant = { ...this.selectedVariant, size: $(event.target).val() };
+			// console.log(this.selectedVariant.size,$(event.target).val())
 		}
 		this.refreshSelectableGroup();
 	}
-
+	
 	onChangeQty(current: number) {
 		this.qty = current;
+		this.offerservice.setqty(this.qty)
+	}
+
+	onChangeQty2(current: number) {
+		this.product.variants.quantity= current;
 	}
 
 	clearSelection() {
@@ -227,5 +413,43 @@ export class DetailThreeComponent implements OnInit {
 			size: ""
 		};
 		this.refreshSelectableGroup();
+	}
+
+	scrollHandler() {
+		let stickyBar = this.el.nativeElement.querySelector('.sticky-bar');
+		if (stickyBar.classList.contains('d-none') && this.el.nativeElement.getBoundingClientRect().bottom < 0) {
+			stickyBar.classList.remove('d-none');
+			return;
+		}
+		if (!stickyBar.classList.contains('d-none') && this.el.nativeElement.getBoundingClientRect().bottom > 0) {
+			stickyBar.classList.add('d-none');
+		}
+	}
+
+	updateVarient(varient:Event){
+		this.size = $(varient.target).val()
+		console.log("size",this.variant,this.variantValue);
+		this.colors = [];
+		for(let x of this.product.variants){
+			console.log(x)
+			if( x.size== this.size){
+				if(!this.colors.includes(x.colour)){
+					this.colors.push(x.colour)
+				}
+				this.amount = x.price;
+			}
+		}
+	}
+
+	updateColor(color){
+		if(!color || !this.size){
+			this.toastrService.error("please select size or color")
+			return
+		}
+		this.product.variants.forEach((element) => {
+			if(element.size == this.size && element.colour == color){
+				this.variant = element.id;
+			}
+		});
 	}
 }

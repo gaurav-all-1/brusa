@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultPageComponent } from './default/default.component';
+import { GalleryPageComponent } from './gallery/gallery.component';
 
 // import { CenteredPageComponent } from './centered/centered.component';
 // import { ExtendedPageComponent } from './extended/extended.component';
@@ -14,7 +15,11 @@ import { DefaultPageComponent } from './default/default.component';
 const routes: Routes = [
     {
         path: 'BlackBrusaProducts/:slug',
-        component: DefaultPageComponent
+        component: GalleryPageComponent
+    },
+    {
+        path: 'gallery/:slug',
+        component:  DefaultPageComponent
     }
    
 ]
