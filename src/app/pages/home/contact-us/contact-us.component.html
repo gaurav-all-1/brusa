@@ -23,7 +23,7 @@
                                   <!-- <h6>Hi,</h6> -->
                                   <p class="mb-1">We hope you’re enjoying shopping with us.
                                 </p>
-                                <p class="mb-1">Should you have any issues related to our products and services, please reach out to our customer care team at customercare@blackbrusa.com or call us on +91-99999 00000.
+                                <p class="mb-1">Should you have any issues related to our products and services, please reach out to our customer care team at customercare@blackbrusa.com or call us on +91-81785 66024.
                                 </p>
                                 <p class="mb-1">We’re available Monday through Saturday from 9:00 AM to 7:00 PM.
                                 </p>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="col-lg-9">
                             <div style="margin-top: 4px;">
-                                <p><a href="tel:">+91 99999 00000</a></p>
+                                <p><a href="tel:">+91 81785 66024</a></p>
                             </div>
                         </div>
                     </div>
@@ -95,6 +95,14 @@
                                 <small *ngIf="contactform.controls.name.errors?.pattern" class="text-danger">Please Provide a Valid Name</small>
                               </div>
                             </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Company Name</label>
+                                <input type="email" class="form-control" formControlName="company" id="exampleFormControlInput1" placeholder="Enter Your Name" required>
+                                <div *ngIf="(contactform.controls.company.invalid &&  contactform.controls.name.touched) || contactform.controls.company.dirty">
+                                  <small *ngIf="contactform.controls.company.errors?.required" class="text-danger">Name is Required</small>
+                                  <small *ngIf="contactform.controls.company.errors?.pattern" class="text-danger">Please Provide a Valid Name</small>
+                                </div>
+                              </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email Address</label>
                                 <input type="email" class="form-control" formControlName="email" id="exampleFormControlInput1" placeholder="name@example.com" required>

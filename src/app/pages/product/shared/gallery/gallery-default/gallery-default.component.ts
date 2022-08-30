@@ -49,6 +49,8 @@ export class GalleryDefaultComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+
+		console.log(this.product,"ggggggg")
 		debugger;
 		this.product.stock = this.product.variants[0].quantity;
 		this.product.new = this.product.quantity>200?true:false;

@@ -23,6 +23,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { CancelpolicyComponent } from './cancelpolicy/cancelpolicy.component';
 import { ReturnExchangeComponent } from './returnexchange/returnexchange.component';
 import { OrderPolicyComponent } from './orderpolicy/orderpolicy.component';
+import { SizeguideComponent } from './sizeguide/sizeguide.component';
 
 
 // import { BlogCollectionComponent } from './blog-collection/blog-collection.component';
@@ -45,6 +46,7 @@ import { OrderPolicyComponent } from './orderpolicy/orderpolicy.component';
   CancelpolicyComponent,
   ReturnExchangeComponent,
   OrderPolicyComponent,
+  SizeguideComponent,
 	
 
 		// BlogCollectionComponent
