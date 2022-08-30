@@ -269,8 +269,6 @@ export class DetailOneComponent implements OnInit {
 
 
 
-
-
 	// showLoginModal(event: Event): void {
 	// 	event.preventDefault();
 	// 	this.modalService.showLoginModal();
@@ -415,7 +413,7 @@ export class DetailOneComponent implements OnInit {
 		};
 		this.refreshSelectableGroup();
 	}
-
+	
 	scrollHandler() {
 		let stickyBar = this.el.nativeElement.querySelector('.sticky-bar');
 		if (stickyBar.classList.contains('d-none') && this.el.nativeElement.getBoundingClientRect().bottom < 0) {
@@ -444,7 +442,7 @@ export class DetailOneComponent implements OnInit {
 
 	updateColor(color){
 		if(!color || !this.size){
-			this.toastrService.error("please select size or color")
+			this.toastrService.error("Please Select Size or Color")
 			return
 		}
 		this.product.variants.forEach((element) => {

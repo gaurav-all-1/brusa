@@ -53,12 +53,12 @@ export class ForgotpasswordComponent implements OnInit {
 		
     if(newpassword=="" || newpassword==undefined || newpassword==null){
 		  this.error=true
-		  this.message="Please enter new password"
+		  this.message="Please Enter New Password"
 		  this.loader = false;
 		  return
 		}else if(confirmpassword=="" || confirmpassword==undefined || confirmpassword==null){
 		  this.error=true
-		  this.message="Please enter confirm password"
+		  this.message="Please Enter Confirm Password"
 		  this.loader = false;
 		  return
 		}else{
@@ -74,24 +74,24 @@ export class ForgotpasswordComponent implements OnInit {
 				this.loader = false;
 
 				 if(res['message']!=null){
-					 this.toaster.success("Your password has been changed, Please log in with the updated credentials.");
+					 this.toaster.success("Your Password has been Changed, Please Log in with the Updated Credentials.");
 					 this.route.navigateByUrl("/");
 					 return
 				 }else{
 					this.loader = false;
 					this.error=true
-					this.message="Something went wrong please try again later."
+					this.message="Something Went Wrong Please Try Again Later."
 					return
 				  }
 				},(error)=>{
 					this.loader = false;
-					this.toaster.error("Something went wrong, please try creating a fresh forgotpassword link.")
+					this.toaster.error("Something Went Wrong, Please Try Creating a Fresh Forgot Password Link.")
 				})
 				return
 			  }else{
 				this.loader = false;
 				this.error=true
-				this.message="Password and confirm password should be same."
+				this.message="Password and Confirm Password Should be Same."
 				return 
 			  }
 		}

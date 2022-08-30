@@ -17,7 +17,7 @@
         <div class="container" *ngIf="wishlistproduct.length == 0 else wishlistBlock">
             <div class="text-center">
                 <i class="icon-heart-o wishlist-empty d-block" style="font-size: 15rem; line-height: 1"></i>
-                <span class="d-block mt-2">No products added to wishlist</span>
+                <span class="d-block mt-2">No Products Added To Wishlist</span>
                 <!-- <a class="btn btn-primary mt-2">Wishlist empty</a> -->
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <table class="table table-wishlist table-mobile">
                     <thead>
                         <tr>
-                            <th>Product</th>
+                            <th class="product-padd">Product</th>
                             <th>Price</th>
                             <th>Stock Status</th>
                             <th></th>
@@ -81,8 +81,8 @@
                             
                             </td>
                             <td class="stock-col">
-                                <span class="in-stock" *ngIf="data.stock > 0">In stock</span>
-                                <span class="out-of-stock" *ngIf="data.stock < 1">Out of stock</span>
+                                <span class="in-stock" *ngIf="data.stock > 0">In Stock</span>
+                                <span class="out-of-stock" *ngIf="data.stock < 1">Out of Stock</span>
                             </td>
                             <td class="action-col">
                                 <button class="btn btn-block btn-outline-primary-2" *ngIf="data.stock > 0"

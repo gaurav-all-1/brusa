@@ -19,6 +19,7 @@ import { SingleComponent } from './shared/single/single.component';
 import { CancelpolicyComponent } from './pages/home/cancelpolicy/cancelpolicy.component';
 import { OrderPolicyComponent } from './pages/home/orderpolicy/orderpolicy.component';
 import { ReturnExchangeComponent } from './pages/home/returnexchange/returnexchange.component';
+import { SizeguideComponent } from './pages/home/sizeguide/sizeguide.component';
 
 
 
@@ -74,6 +75,10 @@ const routes: Routes = [
 			{
 				path: 'returnexchange',
 				component: ReturnExchangeComponent
+			},
+			{
+				path: 'sizeguide',
+				component: SizeguideComponent
 			},
 			
 			// {

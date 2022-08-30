@@ -246,3 +246,16 @@
 		}
 	}
 }
+
+
+
+.table th, .table thead th {
+    border-top: none;
+    border-bottom: 0.1rem solid #ebebeb;
+    font-weight: 500;
+    color: #131348 !important;
+}
+
+.product-padd{
+	padding-left: 14px !important;
+}

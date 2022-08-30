@@ -47,7 +47,7 @@ export class CartService {
 		console.log("cart",variant);
 		if(!variant)
 		{
-			this.toastrService.error('Please select a size');
+			this.toastrService.error('Please Select a Size or Colour');
 		}else{
 			// if (this.canAddToCart(product, qty)) {
 		let cartDataItems = localStorage.getItem('cartDataItems');
@@ -82,7 +82,7 @@ export class CartService {
 				  product.id = res.data[0].product.id;
 				  console.log('cart-id done', product.id);
 				  this.store.dispatch(new AddToCartAction({ product, qty }));
-				  this.toastrService.success('Product added to Cart.');
+				  this.toastrService.success('Product Added to Cart.');
 				  setTimeout(()=>{
 					  location.reload()
 				  },700)
@@ -108,7 +108,7 @@ export class CartService {
 						localStorage.setItem('cartDataItems',JSON.stringify(cartDataItems));
 					}
 				})
-				  this.toastrService.success('Product added to Cart.');
+				  this.toastrService.success('Product Added to Cart.');
 				  setTimeout(()=>{
 					  location.reload()
 				  },700)
@@ -137,7 +137,7 @@ export class CartService {
 		console.log("cart",variant);
 		if(!variant)
 		{
-			this.toastrService.error('Please select a size');
+			this.toastrService.error('Please Select a Size or Colour');
 		}else{
 			// if (this.canAddToCart(product, qty)) {
 		let cartDataItems = localStorage.getItem('cartDataItems');
@@ -170,7 +170,7 @@ export class CartService {
 				  product.id = res.data[0].product.id;
 				  console.log('cart-id done', product.id);
 				  this.store.dispatch(new AddToCartAction({ product, qty }));
-				  this.toastrService.success('Product added to Cart.');
+				  this.toastrService.success('Product Added to Cart.');
 				  setTimeout(()=>{
 					  location.reload() 
 				  },700)
@@ -196,7 +196,7 @@ export class CartService {
 						localStorage.setItem('cartDataItems',JSON.stringify(cartDataItems));
 					}
 				})
-				  this.toastrService.success('Product added to Cart.');
+				  this.toastrService.success('Product Added to Cart.');
 				  setTimeout(()=>{
 					  location.reload()
 				  },700)
@@ -221,7 +221,7 @@ export class CartService {
 	// Product Removed from the Cart
 	removeFromCart(product: CartItem) {
 		this.store.dispatch(new RemoveFromCartAction({ product }));
-		this.toastrService.success('Product removed from Cart.');
+		this.toastrService.success('Product Removed From Cart.');
 	}
 
 	// Cart update
