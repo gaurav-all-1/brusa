@@ -54,10 +54,12 @@ export class GalleryPageComponent implements OnInit {
 				productImages.forEach(element => {
 					console.log("%%%%%%%");
 					console.log(element);
+					if(color){
 					if(element.color != null && element.color.toLowerCase() === color.toLowerCase())
 					{
 						updatedProductImages.push(element);
 					}
+				}
 				});
 				if(color)
 				{
@@ -67,6 +69,7 @@ export class GalleryPageComponent implements OnInit {
 				//  console.log(this.) 
 				this.getcat = this.product.category['coverImage']
 				this.catId = this.product.category.id;
+				console.log("category ====="+this.catId);
 				this.relatedID.announceMission({catId:this.catId,productId:this.product.id})
 				
 			});
